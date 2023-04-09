@@ -52,8 +52,8 @@ sougou_site_verification:
 menu:
   home: / || fas fa-home
   archives: /archives/ || fas fa-folder-open
-  # categories: /categories/ || fas fa-layer-group
-  # tags: /tags/ || fas fa-tags
+  categories: /categories/ || fas fa-layer-group
+  tags: /tags/ || fas fa-tags
   # You can add a secondary menu like follow.
   # xxx1: javascript:; || fa(s|r|l|d|b) fa-xxx
 
@@ -75,14 +75,14 @@ menu_settings:
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/icons/favicon-16x16.png
-  medium: /images/icons/favicon-32x32.png
+  small: /favicon_package_v0.16/favicon-16x16.png
+  medium: /favicon_package_v0.16/favicon-32x32.png
   # ! --------------------------------------------------
   # ! If you don't know the following, please ignore it.
   # ! --------------------------------------------------
-  # apple_touch_icon: /images/icons/apple-touch-icon.png
-  # safari_pinned_tab: /images/icons/stun-logo.svg
-  # msapplication: /images/icons/favicon-144x144.png
+  apple_touch_icon: /favicon_package_v0.16/apple-touch-icon.png
+  safari_pinned_tab: /favicon_package_v0.16/safari-pinned-tab.svg
+  msapplication: /favicon_package_v0.16/mstile-150x150.png
 
 # Progressive Web Apps
 # See: https://github.com/lavas-project/hexo-pwa/
@@ -138,11 +138,11 @@ header:
   height: 80%
   # Background image of site header.
   bg_image:
-    enable: false
+    enable: true
     # In theme directory (source/images): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
-    url:
+    url: /image/2.png
   # Banner area.
   banner:
     # Effective for all pages.
@@ -294,17 +294,16 @@ author:
     # In theme directory (source/images): /images/avatar.png
     # In site directory (source/uploads): /uploads/avatar.png
     # You can also use a link of image.
-    url: /images/icons/stun-logo.svg
+    url: /favicon_package_v0.16/apple-touch-icon.png
     # If true, the avatar would be displayed in a circle.
-    rounded: false
+    rounded: true
     # Opacity of avatar (value: 0 ~ 1)
     opacity: 1
     # Mouse hover animation
     # Optional values: turn | shake
     animation: turn
   # Your favorite motto.
-  motto: Hello Stun
-
+  motto: 咸主
 # Social links
 # Value before `||` is the target link, value after `||` is the name of FontAwesome icon.
 # Usage: `Key: /link/ || fa(s|r|l|d|b) fa-iconname`
@@ -313,18 +312,18 @@ author:
 # e.g. `origin:sf`, so `sf` will be displayed.
 social:
   github: https://github.com/ || fab fa-github
-  google: https://plus.google.com/ || fab fa-google
-  twitter: https://twitter.com/ || fab fa-twitter
-  youtube: https://youtube.com/ || fab fa-youtube
+  # google: https://plus.google.com/ || fab fa-google
+  # twitter: https://twitter.com/ || fab fa-twitter
+  #youtube: https://youtube.com/ || fab fa-youtube
   # segmentfault: https://segmentfault.com/ || origin:sf
-  # weibo: https://weibo.com/ || fab fa-weibo
+  weibo: https://weibo.com/ || fab fa-weibo
   # zhihu: https://www.zhihu.com/ || origin:知
-  # wechat: yournumber || fab fa-weixin
+  wechat: yournumber || fab fa-weixin
   # telegram: yournumber || fab fa-telegram
-  # qq: yournumber || fab fa-qq
+  qq: tencent://message?uin=1443584545 || fab fa-qq
 
 social_setting:
-  enable: false
+  enable: true
   # Only show by icon.
   icon_only: true
 
