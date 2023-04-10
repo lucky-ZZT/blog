@@ -5,7 +5,7 @@
 # Site
 title: 咸鱼的自我提升
 subtitle: '生活本就沉闷，但跑起来就有风'
-description: '一个有趣的博客'
+description: '一个有趣的博主'
 keywords: '电路，计算机，学习'
 author: zzt
 language: zh-CN
@@ -161,42 +161,42 @@ plugins:
 
 # 追番插件
 # https://github.com/HCLonely/hexo-bilibili-bangumi
-bangumi: # 追番设置
-  enable: true
-  path:
-  vmid: 372204786
-  title: '追番列表'
-  quote: '生命不息，追番不止！'
-  show: 1
-  lazyload: false
-  loading:
-  metaColor:
-  color:
-  webp:
-  progress:
-  extra_options:
-    key: value
-cinema: # 追剧设置
-  enable: false
-  path:
-  vmid: 372204786
-  title: '追剧列表'
-  quote: '生命不息，追剧不止！'
-  show: 1
-  lazyload: true
-  loading:
-  metaColor:
-  color:
-  webp:
-  progress:
-  extra_options:
-    key: value
+# bangumi: # 追番设置
+#   enable: true
+#   path:
+#   vmid: 372204786
+#   title: '追番列表'
+#   quote: '生命不息，追番不止！'
+#   show: 1
+#   lazyload: false
+#   loading:
+#   metaColor:
+#   color:
+#   webp:
+#   progress:
+#   extra_options:
+#     key: value
+# cinema: # 追剧设置
+#   enable: false
+#   path:
+#   vmid: 372204786
+#   title: '追剧列表'
+#   quote: '生命不息，追剧不止！'
+#   show: 1
+#   lazyload: true
+#   loading:
+#   metaColor:
+#   color:
+#   webp:
+#   progress:
+#   extra_options:
+#     key: value
 
 # 百度主动推送
 # https://github.com/huiwang/hexo-baidu-url-submit
 baidu_url_submit:
   count: 1        # 提交最新的多少个链接
-  host: blog.anzhiy.cn  # 在百度站长平台中添加的域名
+  host: blog.ztblog.cc  # 在百度站长平台中添加的域名
   token: Rgem9kAECSLflQq6   # 秘钥
   path: baidu_urls.txt   # 文本文档的地址， 新链接会保存在此文本文档里
 
