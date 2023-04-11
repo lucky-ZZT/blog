@@ -7,7 +7,7 @@ tags:
 
 ## 2023/4/11/-15:30
 
-{% tip error %}
+{% tip success%}
 
 1、针对代码块显示问题 未能操作成功！
 
@@ -24,6 +24,12 @@ highlight_height_limit: false # unit: px
 ```
 highlight_shrink: true #代码框不展开，需点击 '>' 打开
 ```
+
+​	重新在下载主题，替换原文件后——依旧不起作用
+
+​	删除浏览器缓存后——成功修复
+
+​	归因于pwa缓存bug太多了，这里选择直接关了
 
 {% tip success %}
 
