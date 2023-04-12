@@ -2,7 +2,8 @@
 title: hexo美化
 abbrlink: bd46f10a
 date: 2023-04-10 13:46:22
-tags:
+tags: 美化
+cover:
 ---
 
 转录自：[安知鱼](https://anzhiy.cn/posts/sdxhu.html)
@@ -1227,7 +1228,7 @@ electric_clock:
   rectangle: 112.6534116,27.96920845 # 获取访问者位置失败时会显示该位置的天气，同时该位置为开启default_rectangle后的位置
 ```
 
-## Gitcalendar
+## Gitcalendar-未配置成功
 
 参考：https://akilar.top/posts/1f9c68c9/
 
@@ -1263,4 +1264,225 @@ gitcalendar:
   gitcalendar_js: https://cdn.cbd.int/hexo-filter-gitcalendar/lib/gitcalendar.js
 ```
 
-## hexo-butterfly-swiper-anzhiyu 插件安装
+## 菜单栏多彩图标
+
+参考教程——店长原教程[菜单栏多色图标配置教程](https://akilar.top/posts/23fdf850)
+
+前置条件：
+
+- 配置过一图流，有custom.css文件，并且文件中有.iconfont配置
+- 在外挂标签部分引入了ali_font.js
+
+1.配置项
+
+```
+# Inject
+# Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
+# 插入代码到头部 </head> 之前 和 底部 </body> 之前
+inject:
+  head:
+    # 公共css
+    - <link rel="stylesheet" href="/css/custom.css"">
+    - <link rel="stylesheet" href="https://cdn.cbd.int/qweather-icons@1.1.1/font/qweather-icons.css">
+    # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
+  bottom:
+    # 控制台打印消息
+    - <script async rel="prefetch" src="/js/console.js"></script>
+    # 标题卖萌
+    - <script async src="/js/diytitle.js"></script>
+    # 站点公祭日自动变灰判定
+    - <script async src="/js/grayscale.js"></script>
+    # 浮动动画特效
+    - <script async data-pjax src="/js/floatpanel.js"></script>
+    # aplayer音乐
+    - <div class="aplayer no-destroy" data-id="8152976493" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div>
+```
+
+2.替换全部内容修改`[Blogroot]\themes\butterfly\layout\includes\header\menu_item.pug`,本方案默认使用观感最佳的悬停父元素触发子元素动画效果。默认动画为`faa-tada`。
+
+```yaml
+if theme.menu
+  //- for mobile sidebar
+  - let sidebarChildHide = theme.hide_sidebar_menu_child ? 'hide' : ''
+
+  .menus_items
+    each value, label in theme.menu
+      if typeof value !== 'object'
+        .menus_item
+          a.site-page.faa-parent.animated-hover(href=url_for(trim(value.split('||')[0])))
+            if value.split('||')[1]
+              - var icon_value = trim(value.split('||')[1])
+              - var anima_value = value.split('||')[2] ? trim(value.split('||')[2]) : 'faa-tada'
+              if icon_value.substring(0,2)=="fa"
+                i.fa-fw(class=icon_value + ' ' + anima_value)
+              else if icon_value.substring(0,4)=="icon"
+                svg.icon(aria-hidden="true" class=anima_value)
+                  use(xlink:href=`#`+ icon_value)
+            span=' '+label
+      else
+        .menus_item
+          a.site-page.faa-parent.animated-hover(href='javascript:void(0);')
+            if label.split('||')[1]
+              - var icon_label = trim(label.split('||')[1])
+              - var anima_label = label.split('||')[2] ? trim(label.split('||')[2]) : 'faa-tada'
+              if icon_label.substring(0,2)=="fa"
+                i.fa-fw(class=icon_label + ' ' + anima_label)
+              else if icon_label.substring(0,4)=="icon"
+                svg.icon(aria-hidden="true" class=anima_label)
+                  use(xlink:href=`#`+ icon_label)
+            span=' '+ trim(label.split('||')[0])
+            i.fas.fa-chevron-down.expand(class=sidebarChildHide)
+          ul.menus_item_child
+            each val,lab in value
+              li
+                a.site-page.child.faa-parent.animated-hover(href=url_for(trim(val.split('||')[0])))
+                  if val.split('||')[1]
+                    - var icon_val = trim(val.split('||')[1])
+                    - var anima_val = val.split('||')[2] ? trim(val.split('||')[2]) : 'faa-tada'
+                    if icon_val.substring(0,2)=="fa"
+                      i.fa-fw(class=icon_val + ' ' + anima_val)
+                    else if icon_val.substring(0,4)=="icon"
+                      svg.icon(aria-hidden="true" class=anima_val)
+                        use(xlink:href=`#`+ icon_val)
+                  span=' '+ lab
+```
+
+3.修改配置项
+
+```yaml
+menu:
+  首页: / || fas fa-home || faa-tada
+  时间轴: /archives/ || fas fa-archive
+  闲言碎语: /artitalk/ || fas fa-comment-dots
+  音乐馆: /music/ || fas fa-music
+  分类: /categories/ || fas fa-folder-open
+  # List||fas fa-list:
+  #   Music: /music/ || fas fa-music
+  #   Movie: /movies/ || fas fa-video
+
+  朋友圈: /fcircle/ || fab fa-artstation
+  留言板: /comments/ || fas fa-envelope
+  友人帐: /link/ || fas fa-link
+  # 闲言碎语: /hpptalk/ || fas fa-comment-dots
+  追番: /bangumis/ || icon-bilibili1
+  关于: /about/ || icon-zhifeiji
+```
+
+## Social 卡片彩色图标引入
+
+参考教程
+
+| 参考方向   | 教程原贴                                                     |
+| ---------- | ------------------------------------------------------------ |
+| 店长原教程 | [Social 卡片彩色图标引入](https://akilar.top/posts/23fdf850/) |
+
+1.重写`[Blogroot]\themes\butterfly\layout\includes\header\social.pug`,替换为以下代码
+
+```python
+each value, title in theme.social
+  a.social-icon.faa-parent.animated-hover(href=url_for(trim(value.split('||')[0])) target="_blank" title=title === undefined ? '' : trim(title))
+    if value.split('||')[1]
+      - var icon_value = trim(value.split('||')[1])
+      - var anima_value = value.split('||')[2] ? trim(value.split('||')[2]) : 'faa-tada'
+      if icon_value.substring(0,2)=="fa"
+        i.fa-fw(class=icon_value + ' ' + anima_value)
+      else if icon_value.substring(0,4)=="icon"
+        svg.icon(aria-hidden="true" class=anima_value)
+          use(xlink:href=`#`+ icon_value)
+```
+
+2.以下为对应的`social`配置项。写法沿用`menu_item`的写法示例。~~早就想吐槽 butterfly 里 menu 和 social 截然相反的配置项写法了~~。修改`[Blogroot]\_config.butterfly.yml`的`social`配置项。
+
+```yaml
+# social settings (社交图标设置)
+# formal:
+#   icon: link || the description
+social:
+  Github: https://github.com/anzhiyu-c || icon-gitHub || faa-tada
+  Email: https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=2268025923@qq.com || icon-youxiang || faa-tada
+  RSS: atom.xml || icon-rss || faa-tada
+  BiliBili: https://space.bilibili.com/372204786 || icon-bilibili || faa-tada
+  QQ: tencent://Message/?Uin=2268025923&amp;websiteName=local.edu.com:8888=&amp;Menu=yes || icon-QQ1 || faa-tada
+```
+
+## 评论框
+
+官方文档：[Butterfly 安裝文檔(四) 主題配置-2 | Butterfly](https://butterfly.js.org/posts/ceeb73f/#評論)
+
+twikoo:[快速上手 | Twikoo 文档](https://twikoo.js.org/quick-start.html#环境初始化)
+
+## 时间轴
+
+{% tabs link3 %}
+<!-- tab year.js -->
+
+在`[Blogroot]\themes\butterfly\scripts\`目录下新建`year.js`，并在`[Blogroot]\themes\butterfly\scripts\year.js`中输入以下内容：
+
+```js
+JAVASCRIPThexo.extend.helper.register("getAnimalIcon", function (year) {
+  var index = parseInt(year) % 12;
+  var icon = {
+    0: "icon-monkey",
+    1: "icon-rooster",
+    2: "icon-dog",
+    3: "icon-boar",
+    4: "icon-rat",
+    5: "icon-ox",
+    6: "icon-tiger",
+    7: "icon-rabbit",
+    8: "icon-dragon",
+    9: "icon-snake",
+    10: "icon-horse",
+    11: "icon-goat",
+  };
+  return icon[index];
+});
+```
+
+<!-- endtab -->
+
+<!-- tab article-sort.pug -->
+
+修改`[Blogroot]\themes\butterfly\layout\includes\mixins\article-sort.pug`，第 7 行开始，注意缩进。
+
+```
+DIFF    - let title = article.title || _p('no_title')
++   - let iconAnimal = '#'+ getAnimalIcon(tempYear)
+    if tempYear !== year
+      - year = tempYear
+-     .article-sort-item.year= year
++     .article-sort-item.year
++       span= year
++       svg.icon(aria-hidden='true')
++         use(xlink:href=iconAnimal)
+    .article-sort-item(class=no_cover)
+      if article.cover && theme.cover.archives_enable
+```
+
+<!-- endtab -->
+
+{% endtabs %}
+
+## 站点动态
+
+添加自定义`title.js`，然后主题配置文件`inject`引入即可.
+
+```js
+JAVASCRIPT//动态标题
+var OriginTitile = document.title;
+var titleTime;
+document.addEventListener("visibilitychange", function () {
+  if (document.hidden) {
+    //离开当前页面时标签显示内容
+    document.title = "w(ﾟДﾟ)w 不要走！再看看嘛！";
+    clearTimeout(titleTime);
+  } else {
+    //返回当前页面时标签显示内容
+    document.title = "♪(^∇^*)欢迎肥来！" + OriginTitile;
+    //两秒后变回正常标题
+    titleTime = setTimeout(function () {
+      document.title = OriginTitile;
+    }, 2000);
+  }
+});
+```

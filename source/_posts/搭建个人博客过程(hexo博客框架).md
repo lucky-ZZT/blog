@@ -2,14 +2,16 @@
 title: 博客搭建流程（hexo-netlify-github）
 abbrlink: 359ff663
 date: 2023-04-09 23:21:49
-tags:
+tags: hexo博客搭建
+cover:
+swiper_index: 1
 ---
 
 # 搭建个人博客过程(hexo博客框架)
 
 >参考自：[爱扑bug的熊](https://blog.cuijiacai.com/blog-building/)
 >
->
+>https://blog.cuijiacai.com/blog-building/
 
 ## 1.配置环境
 
