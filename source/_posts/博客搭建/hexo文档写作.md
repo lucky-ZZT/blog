@@ -4,6 +4,7 @@ abbrlink: 52e04fc1
 date: 2023-04-12 10:05:04
 tags: hexo写作
 cover:
+category: 博客搭建
 ---
 
 ## 1.文章顶部配置

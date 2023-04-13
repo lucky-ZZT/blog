@@ -4,6 +4,7 @@ abbrlink: bd46f10a
 date: 2023-04-10 13:46:22
 tags: 美化
 cover:
+category: 博客搭建
 ---
 
 转录自：[安知鱼](https://anzhiy.cn/posts/sdxhu.html)

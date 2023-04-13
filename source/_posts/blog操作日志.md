@@ -4,6 +4,7 @@ abbrlink: '712e1829'
 date: 2023-04-11 15:26:29
 tags: 日志
 cover:
+category: 日志
 ---
 
 ## 2023/4/11/
@@ -65,4 +66,38 @@ rectangle: 104.06,30.67 # 获取访问者位置失败时会显示该位置的天
 3.npm i 安装的一些包，在当前的node版本下是没有办法使用的，必须使用建议版本。
 
 4.npm  i 安装出现问题是不会出现 npm-debug.log 文件的，但是 npm  install 安装出现问题是有这个文件的。
+
+{% tip success%}
+
+2、安装人潮汹涌插件
+
+{% endtip %}
+
+## 2023/4/13/
+
+{% tip success%}
+
+1、清理掉人潮汹涌魔改
+
+{% endtip %}
+
+原因：卡顿
+
+{% tip success%}
+
+2、安装了分类磁贴
+
+{% endtip %}
+
+未启用：categoryBar
+
+{% tip success%}
+
+3、配置文章置顶滚动栏
+
+{% endtip %}
+
+https://www.fomal.cc/posts/eec9786.html#%E6%96%87%E7%AB%A0%E7%BD%AE%E9%A1%B6%E6%BB%9A%E5%8A%A8%E6%A0%8F-%E5%BA%97%E9%95%BF
+
+和人潮汹涌冲突，删除掉了人潮汹涌配置项
 

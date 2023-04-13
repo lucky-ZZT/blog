@@ -5,6 +5,7 @@ date: 2023-04-09 23:21:49
 tags: hexo博客搭建
 cover:
 swiper_index: 1
+category: 博客搭建
 ---
 
 # 搭建个人博客过程(hexo博客框架)

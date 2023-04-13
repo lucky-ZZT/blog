@@ -4,10 +4,10 @@
 
 # Site
 title: 咸鱼的自我提升
-subtitle: '生活本就沉闷，但跑起来就有风'
-description: '一个有趣的博主'
+subtitle: 生活本就沉闷，但跑起来就有风
+description: '学习ing'
 keywords: '电路，计算机，学习'
-author: zzt
+author: lucky-帅比
 language: zh-CN
 timezone: ''
 
@@ -230,3 +230,12 @@ aplayer:
 
 butterfly_article_double_row: # 分栏
   enable: false
+
+kramed:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
