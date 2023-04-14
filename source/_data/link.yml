@@ -5,6 +5,18 @@
       link: https://hexo.io/zh-tw/
       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
       descr: 快速、简单且强大的网志框架
+    - name: 站长
+      link: https://akilar.top/
+      avatar: https://akilar/img/favicon.png
+      descr: 快速、简单且强大的网志框架
+    - name: butterfly
+      link: https://butterfly.js.org/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 快速、简单且强大的网志框架   
+    - name: 安知鱼
+      link: https://anzhiy.cn
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 快速、简单且强大的网志框架
 
 - class_name: 网站
   class_desc: 值得推荐的网站
