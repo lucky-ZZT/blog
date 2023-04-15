@@ -101,3 +101,20 @@ https://www.fomal.cc/posts/eec9786.html#%E6%96%87%E7%AB%A0%E7%BD%AE%E9%A1%B6%E6%
 
 和人潮汹涌冲突，删除掉了人潮汹涌配置项
 
+## 2023/4/15/
+
+{% tip success%}
+
+1、清理插件残留
+
+{% endtip %}
+
+解决显示异常，并且打开pjax
+
+{% tip success%}
+
+2、公式显示异常问题
+
+{% endtip %}
+
+hexo中暂时不能显示**交换图表**方面的内容，所以将该部分代码全部注释
