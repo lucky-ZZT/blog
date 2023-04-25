@@ -1,0 +1,596 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>基本放大电路—场效应管 | 咸鱼的自我提升</title><meta name="author" content="lucky-帅比"><meta name="copyright" content="lucky-帅比"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="静态电路 三电阻电路的静态分析 mosfet共源极电路   图示为一个增强型 MOSFET，2N7000 的放大电路，为共源极电路。其信号耦合电路与双极型晶体管电路一样 静态电路包括电源、晶体管和三个电阻 R2、R3、R1。已知 2N7000 的 UGSTH&#x3D;2V，K&#x3D;0.0502A&#x2F;V2 ，求解静态工作点。   JFET共源极电路   已知 2N4393 的 UGSOFF 为-1.45V，IDS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基本放大电路—场效应管">
+<meta property="og:url" content="http://blog.ztblog.cc/posts/d2820299.html">
+<meta property="og:site_name" content="咸鱼的自我提升">
+<meta property="og:description" content="静态电路 三电阻电路的静态分析 mosfet共源极电路   图示为一个增强型 MOSFET，2N7000 的放大电路，为共源极电路。其信号耦合电路与双极型晶体管电路一样 静态电路包括电源、晶体管和三个电阻 R2、R3、R1。已知 2N7000 的 UGSTH&#x3D;2V，K&#x3D;0.0502A&#x2F;V2 ，求解静态工作点。   JFET共源极电路   已知 2N4393 的 UGSOFF 为-1.45V，IDS">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/78C2BEFC01A90F91DDB68E0EECDF5E2B.jpg">
+<meta property="article:published_time" content="2023-04-20T01:37:34.000Z">
+<meta property="article:modified_time" content="2023-04-23T08:32:54.222Z">
+<meta property="article:author" content="lucky-帅比">
+<meta property="article:tag" content="电路，计算机，学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/78C2BEFC01A90F91DDB68E0EECDF5E2B.jpg"><link rel="shortcut icon" href="/favicon_package_v0.16/favicon-32x32.png"><link rel="canonical" href="http://blog.ztblog.cc/posts/d2820299.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: lucky-帅比","link":"链接: ","source":"来源: 咸鱼的自我提升","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '基本放大电路—场效应管',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-23 16:32:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/js/title.js"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.css" /><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-blog@2.0.4/css/runtime/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="咸鱼的自我提升" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/QQ%E5%9B%BE%E7%89%8720230410142621.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-envelope faa-tada"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw fas fa-link faa-tada"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-zhifeiji"></use></svg><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://ztblog-image.oss-cn-chengdu.aliyuncs.com/78C2BEFC01A90F91DDB68E0EECDF5E2B.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="咸鱼的自我提升"><img class="site-icon" src="/image/siteicon/48.png"/><span class="site-name">咸鱼的自我提升</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-envelope faa-tada"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw fas fa-link faa-tada"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-zhifeiji"></use></svg><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">基本放大电路—场效应管</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-20T01:37:34.000Z" title="发表于 2023-04-20 09:37:34">2023-04-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-23T08:32:54.222Z" title="更新于 2023-04-23 16:32:54">2023-04-23</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%99%B6%E4%BD%93%E7%AE%A1%E5%9F%BA%E7%A1%80/">晶体管基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="基本放大电路—场效应管"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="tip info"><h2 id="静态电路"><a href="#静态电路" class="headerlink" title="静态电路"></a>静态电路</h2></div>
+<h3 id="三电阻电路的静态分析"><a href="#三电阻电路的静态分析" class="headerlink" title="三电阻电路的静态分析"></a>三电阻电路的静态分析</h3><ul>
+<li>mosfet共源极电路</li>
+</ul>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420094628739.png" alt="image-20230420094628739" style="zoom:67%;" /></p>
+<p>图示为一个增强型 MOSFET，2N7000 的放大电路，为共源极电路。其信号耦合电路与双极型晶体管电路一样</p>
+<p>静态电路包括电源、晶体管和三个电阻 R2、R3、R1。已知 2N7000 的 <em>U</em>GSTH=2V，<em>K</em>=0.0502A/V2 ，求解静态工作点。</p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420094859161.png" alt="image-20230420094859161" style="zoom:50%;" /></p>
+<ul>
+<li>JFET共源极电路</li>
+</ul>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420095059318.png" alt="image-20230420095059318" style="zoom:67%;" /></p>
+<p>已知 2N4393 的 <em>U</em>GSOFF 为-1.45V，<em>I</em>DSS 为 19.7mA，求解电路静态。</p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420095555268.png" alt="image-20230420095555268" style="zoom: 50%;" /></p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420095642567.png" alt="image-20230420095642567" style="zoom: 67%;" /></p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420095832292.png" alt="image-20230420095832292" style="zoom:50%;" /></p>
+<h3 id="四电阻电路的静态分析"><a href="#四电阻电路的静态分析" class="headerlink" title="四电阻电路的静态分析"></a>四电阻电路的静态分析</h3><ul>
+<li>mosfet共源极电路</li>
+</ul>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420110726260.png" alt="image-20230420110726260" style="zoom:67%;" /></p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420110921746.png" alt="image-20230420110921746" style="zoom:50%;" /></p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420110948749.png" alt="image-20230420110948749" style="zoom: 50%;" /></p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420111021005.png" alt="image-20230420111021005" style="zoom:50%;" /></p>
+<ul>
+<li>实例</li>
+</ul>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420140602578.png" alt="image-20230420140602578" style="zoom:50%;" /></p>
+<p>图中  是 P 沟道 MOSFET，其关键参数为：<em>U</em>GSTH=-3.695V，<em>K</em> 约为-2.2A/V2</p>
+<p>当确定上方分压电阻为 100kΩ，求两个电路中要求晶体管工作于恒流区，下方电阻的取值范围。由此看哪个电路的稳定性好？</p>
+<p>左侧图：</p>
+<p>​    当<em>R</em>3 越大，会导致 <em>U</em>GSQ的绝对值越小，导致晶体管无法导通到临界值（S点电压高于G点电压，G点电压升高，自然就会导致前面说的情况）。</p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420141029768.png" alt="image-20230420141029768" style="zoom: 50%;" /></p>
+<p>​    <em>R</em>3 越小，会导致晶体管越来越导通，直到它由恒流区进入可变电阻区</p>
+<p>​    <img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420141345103.png" alt="image-20230420141345103" style="zoom: 80%;" /></p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420141522797.png" alt="image-20230420141522797" style="zoom: 50%;" /></p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230420141807660.png" alt="image-20230420141807660" style="zoom:50%;" /></p>
+<p>​    𝑅3_𝑚in约为 80kΩ。</p>
+<p>至此可以知道，右图的 4 电阻静态电路，分压电阻的取值范围更大了，也就更容易设置，其稳定性也就高了许多。</p>
+<div class="tip info"><h2 id="微变等效模型"><a href="#微变等效模型" class="headerlink" title="微变等效模型"></a>微变等效模型</h2></div>
+<ol>
+<li><p>跨导</p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/JEFT%E8%BD%AC%E7%A7%BB%E7%89%B9%E6%80%A7.png" alt="JEFT转移特性"></p>
+</li>
+</ol>
+<center>图2.1 转移特性</center>
+
+<p>​    在给定的一个 <script type="math/tex">U_{GSQ}</script> 处，转移特性的横轴上发生<script type="math/tex">ΔU_{GS}</script>  的变化量，一定会引起纵轴上产生 <script type="math/tex">Δi_D</script>的变化量</p>
+<script type="math/tex; mode=display">
+g_m = \lim\limits_{ΔU_{GS}\to 0}\frac{Δi_D}{ΔU_{GS}}</script><p>​    <script type="math/tex">𝑔_m</script>称之为跨导，为 Q 点处转移特性曲线的切线斜率。可以看出，随着 Q 点的上移，其切线斜率上升，跨导会变大：同样的 <script type="math/tex">ΔU_{GS}</script>的变化，会带来更大的<script type="math/tex">Δi_D</script>。</p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/FET%E5%BE%AE%E5%8F%98%E7%AD%89%E6%95%88%E6%A8%A1%E5%9E%8B.png" alt="FET微变等效模型"></p>
+<center>图2.2 FET微变等效模型</center>
+
+<ul>
+<li>对 JFET 而言，有下式成立：</li>
+</ul>
+<script type="math/tex; mode=display">
+i_d = I_{DSS}(1-\frac{U_{GS}}{U_{GSOFF}})^2</script><script type="math/tex; mode=display">
+g_m = \frac{di_D}{dU_{GS}} = -\frac{2}{U_{GSOFF}}I_{DSS}(1-\frac{U_{GS}}{U_{GSOFF}})= -\frac{2}{U_{GSOFF}}\sqrt{I_{DSS}\times I_{DQ}}</script><ul>
+<li>对 MOSFET 而言，有下式成立：</li>
+</ul>
+<script type="math/tex; mode=display">
+i_D = K(U_{GS}-U_{GSTH})^2</script><script type="math/tex; mode=display">
+g_m = \frac{di_D}{dU_{GS}} = 2K(U_{GS}-U_{GSTH}) = 2\sqrt{k \times I_{DQ}}</script><div class="tip info"><h2 id="放大电路动态分析"><a href="#放大电路动态分析" class="headerlink" title="放大电路动态分析"></a>放大电路动态分析</h2></div>
+<h3 id="共源极放大电路"><a href="#共源极放大电路" class="headerlink" title="共源极放大电路"></a>共源极放大电路</h3><p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/JFET%E5%85%B1%E6%BA%90%E6%9E%81%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF.png" alt="JFET共源极放大电路"></p>
+<center>图3.1 JFET共源极放大电路</center>
+
+<ul>
+<li>跨导<script type="math/tex; mode=display">
+g_m = -\frac{2}{U_{GSOFF}}\sqrt{I_{DSS}\times I_{DQ}} = 14.54mS</script></li>
+</ul>
+<ul>
+<li><p>动态</p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/JFET%E5%85%B1%E6%BA%90%E5%8A%A8%E6%80%81%E7%AD%89%E6%95%88%E7%94%B5%E8%B7%AF.png" alt="JFET共源动态等效电路"></p>
+</li>
+</ul>
+<center>图3.2 JFET共源动态等效电路</center>
+
+<p>​    S 为西门子，1S=1A/V=1/Ω。</p>
+<script type="math/tex; mode=display">
+A_u = \frac{u_o}{u_i}=\frac{-g_mu_{gs}R_1//R_4}{u_{gs}}=-7.26</script><script type="math/tex; mode=display">
+r_i=R_3=1MΩ</script><script type="math/tex; mode=display">
+r_o=R_1=1kΩ</script><p>​    此电路实现了反相放大，显然比双极型晶体管的电压放大能力要弱。但是，其输入电阻取决于 <em>R</em>3，可以由用户设计选择，一般可以大于1MΩ。这是双极型晶体管电路无法实现的。</p>
+<p>​    C2作用：R2在动态过程中，会影响放大倍数，所以使用C2去除其在动态电路中的影响</p>
+<h3 id="共漏极放大电路"><a href="#共漏极放大电路" class="headerlink" title="共漏极放大电路"></a>共漏极放大电路</h3><p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/MOSFET%20%E6%9E%84%E6%88%90%E7%9A%84%E6%BA%90%E6%9E%81%E8%B7%9F%E9%9A%8F%E5%99%A8%E7%94%B5%E8%B7%AF.png" alt="MOSFET 构成的源极跟随器电路"></p>
+<center>图3.3 MOSFET 构成的源极跟随器电路</center>
+
+<p>​    已知 2N7000 关键指标为：<em>U</em>GSTH=2V，<em>K</em>=0.0502A/<script type="math/tex">V^2</script> </p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/MOSFET%20%E6%9E%84%E6%88%90%E7%9A%84%E6%BA%90%E6%9E%81%E8%B7%9F%E9%9A%8F%E5%99%A8%E7%94%B5%E8%B7%AF-%E6%B1%82%E8%A7%A3.png" alt="MOSFET 构成的源极跟随器电路-求解" style="zoom:67%;" /></p>
+<script type="math/tex; mode=display">
+i = i_r -i_d = \frac{u}{R_S}+g_mu</script><script type="math/tex; mode=display">
+r_o = \frac{u}{i} = 27.9Ω</script><p>​    这个电路，具有很大的输入电阻(300.7kΩ)，很小的输出电阻(27.9Ω)，接近 1 的电压放大倍数(0.9457)，叫源极跟随器，也称为共漏极放大电路，常用于两级电路的阻抗匹配。</p>
+<h3 id="共栅极放大电路"><a href="#共栅极放大电路" class="headerlink" title="共栅极放大电路"></a>共栅极放大电路</h3><p><img src="C:\Users\ZZT\Pictures\Screenshots\MOSFET 构成的共栅极电路.png" alt="MOSFET 构成的共栅极电路"></p>
+<center>图3.4 MOSFET 构成的共栅极电路</center>
+
+<ul>
+<li><p>静态求解</p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230423162741534.png" alt="image-20230423162741534" style="zoom:67%;" /></p>
+</li>
+<li><p>动态求解</p>
+</li>
+</ul>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230423162847809.png" alt="image-20230423162847809" style="zoom:67%;" /></p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230423162917200.png" alt="image-20230423162917200" style="zoom:67%;" /></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://blog.ztblog.cc">lucky-帅比</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://blog.ztblog.cc/posts/d2820299.html">http://blog.ztblog.cc/posts/d2820299.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.ztblog.cc" target="_blank">咸鱼的自我提升</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/78C2BEFC01A90F91DDB68E0EECDF5E2B.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/4b08abe5.html" title="两部件串联的图解方法"><img class="cover" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2831EC992A895563D144623CB3C8E018.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">两部件串联的图解方法</div></div></a></div><div class="next-post pull-right"><a href="/posts/67ab04de.html" title="场效应管"><img class="cover" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/AA00A7FBE5EDF22565563F6B1C46F034.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">场效应管</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/QQ%E5%9B%BE%E7%89%8720230410142621.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">lucky-帅比</div><div class="author-info__description">学习ing</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lucky-ZZT"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/lucky-ZZT" target="_blank" title="Github"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-gitHub"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=1443584545@qq.com" target="_blank" title="Email"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-youxiang"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/389212655" target="_blank" title="BiliBili"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-bilibili"></use></svg></a><a class="social-icon faa-parent animated-hover" href="tencent://Message/?Uin=1443584545&amp;amp;websiteName=local.edu.com:8888=&amp;amp;Menu=yes" target="_blank" title="QQ"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-QQ1"></use></svg></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E7%94%B5%E8%B7%AF"><span class="toc-number">1.</span> <span class="toc-text">静态电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%94%B5%E9%98%BB%E7%94%B5%E8%B7%AF%E7%9A%84%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">三电阻电路的静态分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E7%94%B5%E9%98%BB%E7%94%B5%E8%B7%AF%E7%9A%84%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">四电阻电路的静态分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E5%8F%98%E7%AD%89%E6%95%88%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text">微变等效模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF%E5%8A%A8%E6%80%81%E5%88%86%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">放大电路动态分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E6%BA%90%E6%9E%81%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF"><span class="toc-number">3.1.</span> <span class="toc-text">共源极放大电路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E6%BC%8F%E6%9E%81%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF"><span class="toc-number">3.2.</span> <span class="toc-text">共漏极放大电路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E6%A0%85%E6%9E%81%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF"><span class="toc-number">3.3.</span> <span class="toc-text">共栅极放大电路</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/93378cf6.html" title="晶体管的频率响应"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/78C2BEFC01A90F91DDB68E0EECDF5E2B.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="晶体管的频率响应"/></a><div class="content"><a class="title" href="/posts/93378cf6.html" title="晶体管的频率响应">晶体管的频率响应</a><time datetime="2023-04-25T07:33:16.000Z" title="发表于 2023-04-25 15:33:16">2023-04-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/7fbac63a.html" title="电流镜"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2831EC992A895563D144623CB3C8E018.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="电流镜"/></a><div class="content"><a class="title" href="/posts/7fbac63a.html" title="电流镜">电流镜</a><time datetime="2023-04-24T09:08:29.000Z" title="发表于 2023-04-24 17:08:29">2023-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/55f7cb35.html" title="恒流源实现高增益放大"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/5B6584B785CF10408E33431479AE8129.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="恒流源实现高增益放大"/></a><div class="content"><a class="title" href="/posts/55f7cb35.html" title="恒流源实现高增益放大">恒流源实现高增益放大</a><time datetime="2023-04-24T08:05:07.000Z" title="发表于 2023-04-24 16:05:07">2023-04-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ece15e1a.html" title="差分放大器"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/78C2BEFC01A90F91DDB68E0EECDF5E2B.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="差分放大器"/></a><div class="content"><a class="title" href="/posts/ece15e1a.html" title="差分放大器">差分放大器</a><time datetime="2023-04-23T12:43:55.000Z" title="发表于 2023-04-23 20:43:55">2023-04-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/4b08abe5.html" title="两部件串联的图解方法"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2831EC992A895563D144623CB3C8E018.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="两部件串联的图解方法"/></a><div class="content"><a class="title" href="/posts/4b08abe5.html" title="两部件串联的图解方法">两部件串联的图解方法</a><time datetime="2023-04-23T10:30:53.000Z" title="发表于 2023-04-23 18:30:53">2023-04-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By lucky-帅比</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://talk.ztblog.cc/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://talk.ztblog.cc/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="8152976493" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://ztblog-image.oss-cn-chengdu.aliyuncs.com/F0891D5BA53CDD731F5B36C1F9A45830.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/博客搭建/&quot;);" href="javascript:void(0);">博客搭建</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://ztblog-image.oss-cn-chengdu.aliyuncs.com/BC483908F430AE21DABEF506541CE784.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/日志/&quot;);" href="javascript:void(0);">日志</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://ztblog-image.oss-cn-chengdu.aliyuncs.com/DC4EF5979BD426C68A80CB3D8FE2A060.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/markdown操作/&quot;);" href="javascript:void(0);">markdown操作</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://ztblog-image.oss-cn-chengdu.aliyuncs.com/BBCEBA698EF4DE70AAA64191F266B7AE.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/晶体管基础/&quot;);" href="javascript:void(0);">晶体管基础</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://ztblog-image.oss-cn-chengdu.aliyuncs.com/DD43F946E85EF0326A2C0D8B1262155B.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/晶体管提高/&quot;);" href="javascript:void(0);">晶体管提高</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'd2ecfc444d8249fb9b1fb8a21b63a77d';
+  var gaud_map_key = '19d06961afb9aaf583c2e9bf8ef4c2d2';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '104.06,30.67';
+  var clock_default_rectangle_enable = 'true';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/52e04fc1.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/6B7715465E6D116E87CF3F95A86EAC8E.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-12</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/52e04fc1.html&quot;);" href="javascript:void(0);" alt="">hexo文档写作</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/52e04fc1.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/2b4a096.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/AA00A7FBE5EDF22565563F6B1C46F034.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-16</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/2b4a096.html&quot;);" href="javascript:void(0);" alt="">输入电阻和输出电阻算法</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/2b4a096.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/d94ecac3.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/AA00A7FBE5EDF22565563F6B1C46F034.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-13</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/d94ecac3.html&quot;);" href="javascript:void(0);" alt="">二极管基础</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/d94ecac3.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/d94ecac4.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/B49B5B82A35184B174F903E848A041E5.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-14</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/d94ecac4.html&quot;);" href="javascript:void(0);" alt="">三极管基础</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/d94ecac4.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/359ff663.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/5B6584B785CF10408E33431479AE8129.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/359ff663.html&quot;);" href="javascript:void(0);" alt="">博客搭建流程（hexo-netlify-github）</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/359ff663.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.2.2" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://www.jsdelivr.com/" style="margin-inline:5px" data-title="本站使用JsDelivr为静态资源提供CDN加速" title=""><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime/runtime.min.js"></script><script async src="/js/ali_font.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
