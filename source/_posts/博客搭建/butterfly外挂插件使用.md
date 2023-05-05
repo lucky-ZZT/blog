@@ -191,6 +191,31 @@ content
 
 {% endtabs %}
 
+
+
+## 改变颜色方法扩展
+
+{% tabs test4 %}
+<!-- tab 样式预览 -->
+
+- <font size=3 color="red">红色1</font>
+- <font size=5 color="red">红色2</font>
+- $\color{red}{红色3}$
+
+<!-- endtab -->
+
+<!-- tab 源码 -->
+
+```
+<font size=3 color="red">红色1</font>
+<font size=5 color="red">红色2</font>
+$\color{red}{红色3}$
+```
+
+<!-- endtab -->
+
+{% endtabs %}
+
 ## 引用 note
 
 {% tabs test5 %}
