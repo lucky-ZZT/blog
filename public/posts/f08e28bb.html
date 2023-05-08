@@ -1,0 +1,589 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>实际运算放大器 | 咸鱼的自我提升</title><meta name="author" content="lucky-帅比"><meta name="copyright" content="lucky-帅比"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="背景​    理想运算放大器：输入阻抗无穷大、开环增益无穷大、带宽无穷大、输入输出严格遵循过零点线性比例关系。在实际中很难直接买到  自制运算放大器 图1.1 运算放大器雏形  Q3,Q5,Q6：恒流源代替RC实现高增益放大（高动态电阻，低静态电阻） C1:降低高频时的自激振荡 Q8,Q9:实现推挽输出，并且降低输出电阻  关键参数 图3.1 表现运放几个关键指标的实际运放等效模型  输入失调电压">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实际运算放大器">
+<meta property="og:url" content="http://blog.ztblog.cc/posts/f08e28bb.html">
+<meta property="og:site_name" content="咸鱼的自我提升">
+<meta property="og:description" content="背景​    理想运算放大器：输入阻抗无穷大、开环增益无穷大、带宽无穷大、输入输出严格遵循过零点线性比例关系。在实际中很难直接买到  自制运算放大器 图1.1 运算放大器雏形  Q3,Q5,Q6：恒流源代替RC实现高增益放大（高动态电阻，低静态电阻） C1:降低高频时的自激振荡 Q8,Q9:实现推挽输出，并且降低输出电阻  关键参数 图3.1 表现运放几个关键指标的实际运放等效模型  输入失调电压">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/B49B5B82A35184B174F903E848A041E5.jpg">
+<meta property="article:published_time" content="2023-05-06T08:57:31.000Z">
+<meta property="article:modified_time" content="2023-05-08T08:27:25.429Z">
+<meta property="article:author" content="lucky-帅比">
+<meta property="article:tag" content="电路，计算机，学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/B49B5B82A35184B174F903E848A041E5.jpg"><link rel="shortcut icon" href="/favicon_package_v0.16/favicon-32x32.png"><link rel="canonical" href="http://blog.ztblog.cc/posts/f08e28bb.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: lucky-帅比","link":"链接: ","source":"来源: 咸鱼的自我提升","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '实际运算放大器',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-08 16:27:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/js/title.js"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.css" /><link rel="stylesheet" href="https://npm.elemecdn.com/anzhiyu-blog@2.0.4/css/runtime/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://cdn.cbd.int/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="咸鱼的自我提升" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/QQ%E5%9B%BE%E7%89%8720230410142621.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-envelope faa-tada"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw fas fa-link faa-tada"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-zhifeiji"></use></svg><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://ztblog-image.oss-cn-chengdu.aliyuncs.com/B49B5B82A35184B174F903E848A041E5.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="咸鱼的自我提升"><img class="site-icon" src="/image/siteicon/48.png"/><span class="site-name">咸鱼的自我提升</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><i class="fa-fw fas fa-home faa-tada"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-archive faa-tada"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/comments/"><i class="fa-fw fas fa-envelope faa-tada"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/link/"><i class="fa-fw fas fa-link faa-tada"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-zhifeiji"></use></svg><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">实际运算放大器</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-06T08:57:31.000Z" title="发表于 2023-05-06 16:57:31">2023-05-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-08T08:27:25.429Z" title="更新于 2023-05-08 16:27:25">2023-05-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%B4%9F%E5%8F%8D%E9%A6%88%E5%92%8C%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/">负反馈和放大电路基础</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="实际运算放大器"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><div class="tip info"><p>​    理想运算放大器：输入阻抗无穷大、开环增益无穷大、带宽无穷大、输入输出严格遵循过零点线性比例关系。在实际中很难直接买到</p>
+</div>
+<h2 id="自制运算放大器"><a href="#自制运算放大器" class="headerlink" title="自制运算放大器"></a>自制运算放大器</h2><p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8%E9%9B%8F%E5%BD%A2.png" alt="运算放大器雏形"></p>
+<center>图1.1 运算放大器雏形</center>
+
+<p>Q3,Q5,Q6：恒流源代替RC实现高增益放大（高动态电阻，低静态电阻）</p>
+<p>C1:降低高频时的自激振荡</p>
+<p>Q8,Q9:实现推挽输出，并且降低输出电阻</p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/10%E5%80%8D%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8.png" alt="10倍运算放大器"></p>
+<h2 id="关键参数"><a href="#关键参数" class="headerlink" title="关键参数"></a>关键参数</h2><p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/%E8%A1%A8%E7%8E%B0%E8%BF%90%E6%94%BE%E5%87%A0%E4%B8%AA%E5%85%B3%E9%94%AE%E6%8C%87%E6%A0%87%E7%9A%84%E5%AE%9E%E9%99%85%E8%BF%90%E6%94%BE%E7%AD%89%E6%95%88%E6%A8%A1%E5%9E%8B.png" alt="表现运放几个关键指标的实际运放等效模型"></p>
+<center>图3.1 表现运放几个关键指标的实际运放等效模型</center>
+
+<h3 id="输入失调电压VOS-Input-Offset-Voltage"><a href="#输入失调电压VOS-Input-Offset-Voltage" class="headerlink" title="输入失调电压VOS: Input Offset Voltage"></a>输入失调电压VOS: Input Offset Voltage</h3><ul>
+<li>本质：当运放的两个输入端接地时，由于图中 <em>V</em>OS的存在，经过 <em>A</em>uo 倍放大，输出电压必然不是 0。在运放的负输入端施加一个可调节的直流电压 <em>u</em>OS，调节 <em>u</em>OS使得输出电压等于 0 时，此时的 <em>u</em>OS即为运放的输入失调电压 <em>V</em>OS。</li>
+<li>根源：输入失调电压，是任何一个运放都存在的，它来自于运放内部电路的电路结构以及非对称性，是难以从根本上消除的</li>
+</ul>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/%E5%A4%B1%E8%B0%83%E7%94%B5%E5%8E%8B1.png" alt="失调电压1"></p>
+<p>​    如上图所示的电路中，LM324设定失调电压为2mV,经过101倍放大，为200mV左右</p>
+<p>分析失调电压的增益：</p>
+<ul>
+<li><p>同相比例放大器</p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/%E5%90%AB%E8%BF%90%E6%94%BE%E8%BE%93%E5%85%A5%E5%A4%B1%E8%B0%83%E7%94%B5%E5%8E%8B%E7%AD%89%E6%95%88%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%90%8C%E7%9B%B8%E6%AF%94%E4%BE%8B%E5%99%A8%E7%94%B5%E8%B7%AF.png" alt="含运放输入失调电压等效模型的同相比例器电路"></p>
+<script type="math/tex; mode=display">
+\begin{array}\\
+u_+ = u_{IN} + V_{OS} = u_-\\
+u_{OUT}= (1+\cfrac{R_2}{R_1})u_+ = G(u_{IN} + V_{OS})\\
+G = 1+\cfrac{R_2}{R_1}
+\end{array}</script></li>
+</ul>
+<ul>
+<li><p>反向比例放大器</p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/%E5%90%AB%E8%BF%90%E6%94%BE%E8%BE%93%E5%85%A5%E5%A4%B1%E8%B0%83%E7%94%B5%E5%8E%8B%E7%AD%89%E6%95%88%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8F%8D%E7%9B%B8%E6%AF%94%E4%BE%8B%E5%99%A8%E7%94%B5%E8%B7%AF.png" alt="含运放输入失调电压等效模型的反相比例器电路"></p>
+<script type="math/tex; mode=display">
+\begin{array}\\
+u_+ = u_- = V_{OS}\\
+u_{OUT} = u_- +u_{R2} = V_{OS}+R_2\cfrac{V_{OS}-u_{IN}}{R_1} = V_{OS}(1+\cfrac{R_2}{R_1})-u_{IN}\cfrac{R_2}{R_1}
+\end{array}</script></li>
+</ul>
+<p>可以看到噪声增益都是一样的（都是从正端输入的-同相比例放大器）</p>
+<h3 id="输入偏置电流-IB：Input-Bias-Current"><a href="#输入偏置电流-IB：Input-Bias-Current" class="headerlink" title="输入偏置电流 IB：Input Bias Current"></a>输入偏置电流 <em>I</em>B：Input Bias Current</h3><p>​    实际运放的两个输入端，在正常工作时，始终存在不为 0的静态流进电流</p>
+<p>​    对 BJT 组成输入级的运放，这个电流就是差动输入级晶体管的基极电流 <em>I</em>BQ，没有它，差动输入级晶体管就没有合适的静态工作点，因此对 BJT 组成输入级的运放，此值是不小的。</p>
+<p>​    对于场效应管组成输入级的运放，这个电流是输入级晶体管的门极静态漏电流，因此此值很小。</p>
+<p>​    偏置电流主要受到温度、共模电压的影响。多数情况下，温度越高，偏置电流越大。共模电压是指实际工作时，两个输入端的共模电压，它对偏置电流的影响，随不同运放而不同，可以通过查阅数据手册获得。</p>
+<h3 id="输入失调电流-IOS：Input-Offset-Current"><a href="#输入失调电流-IOS：Input-Offset-Current" class="headerlink" title="输入失调电流 IOS：Input Offset Current"></a>输入失调电流 <em>I</em>OS：Input Offset Current</h3><p>​    输入失调电流，是两个输入端静态电流的差值，一般没有正负区别</p>
+<p>​    多数情况下，输入偏置电流与输入失调电流近似相等，或者维持在一个数量级。</p>
+<div class="tip info"><p>决定输出失调电压大小的有三个因素:</p>
+<ul>
+<li><p>独立的输入失调电压，</p>
+</li>
+<li><p>以及相互有关联的偏置电流和失调电流，而后面两个因素，又与外部电阻相关</p>
+</li>
+</ul>
+</div>
+<p>降低上述三种情况的影响：</p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/%E5%A4%B1%E8%B0%83%E7%94%B5%E5%8E%8B2.png" alt="失调电压2"></p>
+<h3 id="等效输入失调电压"><a href="#等效输入失调电压" class="headerlink" title="等效输入失调电压"></a>等效输入失调电压</h3><p>​    对一个运放组成的放大电路，输出失调电压是由多种因素造成的，将输出失调电压除以电路总增益，即为等效输入失调电压。</p>
+<script type="math/tex; mode=display">
+U_{OS\_IN} = \cfrac{U_{OS\_OUT}}{G}</script><h3 id="输入电压范围：Input-Voltage-Range"><a href="#输入电压范围：Input-Voltage-Range" class="headerlink" title="输入电压范围：Input Voltage Range"></a>输入电压范围：Input Voltage Range</h3><p>​    保证运算放大器正常工作的最大输入电压范围，也称为共模输入电压范围。</p>
+<p>​    优劣评定：一般运放的输入电压范围比电源电压范围窄 1V 到几 V，比如±15V 供电，输入电压范围在-12V~13V。较好的运放输入电压范围和电源电压范围相同，甚至超出范围0.1V。比如±15V 供电，输入范围在-15.1V 到 15.0V。当运放最大输入电压范围与电源范围比较接近时，比如相差 0.1V 甚至相等、超过，都可以叫“输入轨至轨”，表示为 Rail-to-rail input，或 RRI</p>
+<p>​    理解：运放的两个输入端，任何一个的输入电压超过此范围，都将引起运放的失效。注意，超出此范围并不代表运放会被烧毁，但绝对参数中出现的此值是坚决不能超过的。</p>
+<h3 id="输出电压范围：VOH-VOL-或者-Swing-from-rail"><a href="#输出电压范围：VOH-VOL-或者-Swing-from-rail" class="headerlink" title="输出电压范围：VOH/VOL 或者 Swing from rail"></a>输出电压范围：VOH/VOL 或者 Swing from rail</h3><p>​    定义：在给定电源电压和负载情况下，输出能够达到的最大电压范围。或者给出正向最大电压 VOH 以及负向最小电压 VOL——相对于给定的电源电压和负载；或者给出与电源轨(rail)的差距。</p>
+<p>​    优劣范围：一般运放的输出电压范围要比电源电压范围略窄 1V 到几 V。较好的运放输出电压范围可以与电源电压范围非常接近，比如几十 mV 的差异，这被称为“输出至轨电压”。这在低电压供电场合非常有用。当厂家觉得这个运放的输出范围已经接近于电源电压范围时，就自称“输出轨至轨”，表示为 Rail-to-rail output，或 RRO</p>
+<p>​    理解：在没有额外的储能元件情况下，运放的输出电压不可能超过电源电压范围，随着负载的加重，输出最大值与电源电压的差异会越大。</p>
+<h3 id="共模抑制比：Common-mode-rejection-ratio，CMRR"><a href="#共模抑制比：Common-mode-rejection-ratio，CMRR" class="headerlink" title="共模抑制比：Common-mode rejection ratio，CMRR"></a>共模抑制比：Common-mode rejection ratio，CMRR</h3><p>​    定义：运放的差模电压增益与共模电压增益的比值，可以用倍数表示，也可用 dB 表示。</p>
+<p>​    优劣范围：一般运放都有 60dB 以上的 CMRR，高级的可达 140dB 以上。</p>
+<p>共模抑制比，对减法器影响巨大</p>
+<h3 id="开环电压增益：Open-loop-gain，AVO或者教科书常用的-Auo"><a href="#开环电压增益：Open-loop-gain，AVO或者教科书常用的-Auo" class="headerlink" title="开环电压增益：Open-loop gain，AVO或者教科书常用的 Auo"></a>开环电压增益：Open-loop gain，AVO或者教科书常用的 <em>A</em>uo</h3><p>​    定义：运放本身具备的输出电压与两个输入端差压的比值，一般用 dB 表示。理论上，它与输入信号频率相关，是一个随频率上升而下降的曲线。但在数据手册中，它一般用频率为 0Hz 处的值来表示。</p>
+<p>​    优劣范围：一般在 60dB~160dB 之间。越大的，说明其放大能力越强。</p>
+<p>​    理解：开环电压增益是指放大器在闭环工作时，实际输出除以运放正负输入端之间的压差，类似于运放开环工作——其实运放是不能开环工作的</p>
+<h3 id="压摆率：Slew-rate，SR"><a href="#压摆率：Slew-rate，SR" class="headerlink" title="压摆率：Slew rate，SR"></a>压摆率：Slew rate，SR</h3><p>​    定义：闭环放大器输出电压变化的最快速率。用 V/μs 表示。</p>
+<p>​    优劣范围：从 2mV/μs 到 9000V/μs 不等。</p>
+<p>​    理解：此值显示运放正常工作时，输出端所能提供的最大变化速率，当输出信号欲实现比这个速率还快的变化时，运放就不能提供了，导致输出波形变形——原本是正弦波就变成了三角波</p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/%E5%8E%8B%E6%91%86%E7%8E%87.png" alt="压摆率"></p>
+<h3 id="单位增益带宽：Unity-Gain-bandwidth，UGBW"><a href="#单位增益带宽：Unity-Gain-bandwidth，UGBW" class="headerlink" title="单位增益带宽：Unity Gain-bandwidth，UGBW"></a>单位增益带宽：Unity Gain-bandwidth，UGBW</h3><p>​    定义：运放开环增益-频率图中，开环增益下降到 1 时的频率。</p>
+<p>​    优劣范围：从 10kHz 到 1GHz，差别很大。一般来讲，超过 50MHz 属于宽带放大器。</p>
+<p>​    理解：当输入信号频率高于此值时，运放的开环增益会小于 1，即此时放大器不再具备放大能力。这是衡量运放带宽的一个主要参数。</p>
+<h3 id="增益带宽积：Gain-Bandwidth-Product，GBP-或者-GBW"><a href="#增益带宽积：Gain-Bandwidth-Product，GBP-或者-GBW" class="headerlink" title="增益带宽积：Gain Bandwidth Product，GBP 或者 GBW"></a>增益带宽积：Gain Bandwidth Product，GBP 或者 GBW</h3><p>​    定义：运放开环增益-频率图中，指定频率处，开环增益与该指定频率的乘积。</p>
+<p>​    理解：如果运放开环增益始终满足-20dB/10 倍频的规律，也就是频率提高 10 倍，开环增益变为原先的 0.1 倍，那么它们的乘积将是一个常数，也就等于前述的“单位增益带宽”，或者“1Hz 处的增益”。</p>
+<h3 id="3dB-带宽"><a href="#3dB-带宽" class="headerlink" title="-3dB 带宽"></a>-3dB 带宽</h3><p>​    定义：运放闭环使用时，某个指定闭环增益（一般为 1 或者 2、10 等）下，增益变为低频增益的 0.707 倍时的频率。分为小信号（输出 200mV 以下）大信号（输出 2V）两种。</p>
+<p>​    理解：它直接指出了使用该运放可以做到的闭环放大电路的-3dB 带宽。因为前述的两个参数，单位增益带宽和增益带宽积，其实都是对运放开环增益性能的一种描述，来自开环增益/频率图。而这个参数是对运放接成某种增益的放大电路实施实测得到的。</p>
+<h3 id="满功率带宽：Full-Power-Bandwidth"><a href="#满功率带宽：Full-Power-Bandwidth" class="headerlink" title="满功率带宽：Full Power Bandwidth"></a>满功率带宽：Full Power Bandwidth</h3><p>​    定义：将运放接成指定增益闭环电路（一般为 1 倍），连接指定负载，输入端加载正弦波，输出为指标规定的最大输出幅度，此状态下，不断增大输入信号频率，直到输出出现因压摆率限制产生的失真（变形）为止，此频率即为满功率带宽。</p>
+<p>​    理解：比-3dB 带宽更为苛刻的一个限制频率。它指出在此频率之内，不但输出幅度不会降低，且能实现满幅度的大信号带载输出。</p>
+<h3 id="至稳时间：Settling-Time"><a href="#至稳时间：Settling-Time" class="headerlink" title="至稳时间：Settling Time"></a>至稳时间：Settling Time</h3><p>​    定义：运放接成指定增益（一般为 1），从输入阶跃信号开始，到输出完全进入指定误差范围所需要的时间。所谓的指定误差范围，一般有 1%，0.1%几种。</p>
+<p>​    优劣范围：几个 ns 到几个 ms。</p>
+<p>​    理解：至稳时间由三部分组成，第一是运放的延迟，第二是压摆率带来的爬坡时间，第三是稳定时间。很显然，这个参数与 SR 密切相关，一般来说，SR 越大的，至稳时间更小</p>
+<h3 id="相位裕度-Phase-margin，𝝋𝒎和增益裕度"><a href="#相位裕度-Phase-margin，𝝋𝒎和增益裕度" class="headerlink" title="相位裕度 Phase margin，𝝋𝒎和增益裕度"></a>相位裕度 Phase margin，𝝋𝒎和增益裕度</h3><p>​    相位裕度定义：在运放开环增益和开环相移图中，当运放的开环增益下降到 1 时，开环相移值减去-180°得到的数值。</p>
+<p>​    增益裕度定义：在运放开环增益和开环相移图中，当运放的开环相移下降到-180°时，增益 dB 值取负，或者是增益值的倒数。</p>
+<p>​    理解：相位裕度和增益裕度越大，说明放大器越容易稳定</p>
+<h3 id="电源电压抑制比"><a href="#电源电压抑制比" class="headerlink" title="电源电压抑制比"></a>电源电压抑制比</h3><p>​    理论上，当电源电压发生改变时，运放构成的放大电路输出不应该变化。但是实际却会变化——放大电路的噪声增益 <em>G</em>N 越大，由此带来的输出的变化量也越大。</p>
+<p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/%E7%94%B5%E6%BA%90%E5%99%AA%E5%A3%B0%E6%8A%91%E5%88%B6%E6%AF%94.png" alt="电源噪声抑制比"></p>
+<p>​    电源电压抑制比，其含义是运放对电源上纹波或者噪声的抵抗能力。首先，正负电源具有不一定相同的 PSRR，其次，随着电源电压变化频率的提升，运放对这个变化的抵抗能力会下降。一般情况下，电源变化频率接近其带宽时，运放会失去对电源变化的抵抗——即单位增益情况下电源变化多少，输出就变化多少。</p>
+<p>​    频率越高，运放对电源纹波或者噪声的抵抗能力越弱。旁路电容的作用就是滤除电源上的噪声或者波动，特别在高频处，更需要滤除。</p>
+<h3 id="热阻"><a href="#热阻" class="headerlink" title="热阻"></a>热阻</h3><p>​    热阻标准定义：是导热体阻止热量散失程度的描述，以 1W 发热源在导热路径两端形成的温度差表示，单位为℃/W。有以下常用的两种：</p>
+<p>​    <em>θ</em>JA，是指芯片热源结(Junction)与芯片周围环境(Ambient)（一般为空气）的热阻。</p>
+<p>​    <em>θ</em>JC，是指芯片热源结(Junction)与芯片管壳(Case)的热阻。</p>
+<p>理解：对芯片来说，导热路径的两端分别为自身发热体与环境空气。热阻 <em>θ</em>JA 越大，说明散热越困难，其温差也就越大</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://blog.ztblog.cc">lucky-帅比</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://blog.ztblog.cc/posts/f08e28bb.html">http://blog.ztblog.cc/posts/f08e28bb.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://blog.ztblog.cc" target="_blank">咸鱼的自我提升</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/B49B5B82A35184B174F903E848A041E5.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/65cfac33.html" title="运放的噪声参数"><img class="cover" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/6B7715465E6D116E87CF3F95A86EAC8E.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">运放的噪声参数</div></div></a></div><div class="next-post pull-right"><a href="/posts/e1741e10.html" title="负反馈基础"><img class="cover" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/6C60F24332AE3081313F5352F99FAF3A.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">负反馈基础</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/QQ%E5%9B%BE%E7%89%8720230410142621.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">lucky-帅比</div><div class="author-info__description">学习ing</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/lucky-ZZT"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/lucky-ZZT" target="_blank" title="Github"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-gitHub"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=1443584545@qq.com" target="_blank" title="Email"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-youxiang"></use></svg></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/389212655" target="_blank" title="BiliBili"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-bilibili"></use></svg></a><a class="social-icon faa-parent animated-hover" href="tencent://Message/?Uin=1443584545&amp;amp;websiteName=local.edu.com:8888=&amp;amp;Menu=yes" target="_blank" title="QQ"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-QQ1"></use></svg></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%88%B6%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">自制运算放大器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%8F%82%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text">关键参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%A4%B1%E8%B0%83%E7%94%B5%E5%8E%8BVOS-Input-Offset-Voltage"><span class="toc-number">3.1.</span> <span class="toc-text">输入失调电压VOS: Input Offset Voltage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%81%8F%E7%BD%AE%E7%94%B5%E6%B5%81-IB%EF%BC%9AInput-Bias-Current"><span class="toc-number">3.2.</span> <span class="toc-text">输入偏置电流 IB：Input Bias Current</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E5%A4%B1%E8%B0%83%E7%94%B5%E6%B5%81-IOS%EF%BC%9AInput-Offset-Current"><span class="toc-number">3.3.</span> <span class="toc-text">输入失调电流 IOS：Input Offset Current</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E6%95%88%E8%BE%93%E5%85%A5%E5%A4%B1%E8%B0%83%E7%94%B5%E5%8E%8B"><span class="toc-number">3.4.</span> <span class="toc-text">等效输入失调电压</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E7%94%B5%E5%8E%8B%E8%8C%83%E5%9B%B4%EF%BC%9AInput-Voltage-Range"><span class="toc-number">3.5.</span> <span class="toc-text">输入电压范围：Input Voltage Range</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%94%B5%E5%8E%8B%E8%8C%83%E5%9B%B4%EF%BC%9AVOH-VOL-%E6%88%96%E8%80%85-Swing-from-rail"><span class="toc-number">3.6.</span> <span class="toc-text">输出电压范围：VOH&#x2F;VOL 或者 Swing from rail</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E6%A8%A1%E6%8A%91%E5%88%B6%E6%AF%94%EF%BC%9ACommon-mode-rejection-ratio%EF%BC%8CCMRR"><span class="toc-number">3.7.</span> <span class="toc-text">共模抑制比：Common-mode rejection ratio，CMRR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E7%8E%AF%E7%94%B5%E5%8E%8B%E5%A2%9E%E7%9B%8A%EF%BC%9AOpen-loop-gain%EF%BC%8CAVO%E6%88%96%E8%80%85%E6%95%99%E7%A7%91%E4%B9%A6%E5%B8%B8%E7%94%A8%E7%9A%84-Auo"><span class="toc-number">3.8.</span> <span class="toc-text">开环电压增益：Open-loop gain，AVO或者教科书常用的 Auo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%8B%E6%91%86%E7%8E%87%EF%BC%9ASlew-rate%EF%BC%8CSR"><span class="toc-number">3.9.</span> <span class="toc-text">压摆率：Slew rate，SR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D%E5%A2%9E%E7%9B%8A%E5%B8%A6%E5%AE%BD%EF%BC%9AUnity-Gain-bandwidth%EF%BC%8CUGBW"><span class="toc-number">3.10.</span> <span class="toc-text">单位增益带宽：Unity Gain-bandwidth，UGBW</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A2%9E%E7%9B%8A%E5%B8%A6%E5%AE%BD%E7%A7%AF%EF%BC%9AGain-Bandwidth-Product%EF%BC%8CGBP-%E6%88%96%E8%80%85-GBW"><span class="toc-number">3.11.</span> <span class="toc-text">增益带宽积：Gain Bandwidth Product，GBP 或者 GBW</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3dB-%E5%B8%A6%E5%AE%BD"><span class="toc-number">3.12.</span> <span class="toc-text">-3dB 带宽</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BB%A1%E5%8A%9F%E7%8E%87%E5%B8%A6%E5%AE%BD%EF%BC%9AFull-Power-Bandwidth"><span class="toc-number">3.13.</span> <span class="toc-text">满功率带宽：Full Power Bandwidth</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%B3%E7%A8%B3%E6%97%B6%E9%97%B4%EF%BC%9ASettling-Time"><span class="toc-number">3.14.</span> <span class="toc-text">至稳时间：Settling Time</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BD%8D%E8%A3%95%E5%BA%A6-Phase-margin%EF%BC%8C%F0%9D%9D%8B%F0%9D%92%8E%E5%92%8C%E5%A2%9E%E7%9B%8A%E8%A3%95%E5%BA%A6"><span class="toc-number">3.15.</span> <span class="toc-text">相位裕度 Phase margin，𝝋𝒎和增益裕度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E6%BA%90%E7%94%B5%E5%8E%8B%E6%8A%91%E5%88%B6%E6%AF%94"><span class="toc-number">3.16.</span> <span class="toc-text">电源电压抑制比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E9%98%BB"><span class="toc-number">3.17.</span> <span class="toc-text">热阻</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/65cfac33.html" title="运放的噪声参数"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/6B7715465E6D116E87CF3F95A86EAC8E.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="运放的噪声参数"/></a><div class="content"><a class="title" href="/posts/65cfac33.html" title="运放的噪声参数">运放的噪声参数</a><time datetime="2023-05-08T10:21:58.000Z" title="发表于 2023-05-08 18:21:58">2023-05-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f08e28bb.html" title="实际运算放大器"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/B49B5B82A35184B174F903E848A041E5.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="实际运算放大器"/></a><div class="content"><a class="title" href="/posts/f08e28bb.html" title="实际运算放大器">实际运算放大器</a><time datetime="2023-05-06T08:57:31.000Z" title="发表于 2023-05-06 16:57:31">2023-05-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/e1741e10.html" title="负反馈基础"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/6C60F24332AE3081313F5352F99FAF3A.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="负反馈基础"/></a><div class="content"><a class="title" href="/posts/e1741e10.html" title="负反馈基础">负反馈基础</a><time datetime="2023-05-04T10:11:37.000Z" title="发表于 2023-05-04 18:11:37">2023-05-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/93378cf6.html" title="晶体管的频率响应"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/AA00A7FBE5EDF22565563F6B1C46F034.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="晶体管的频率响应"/></a><div class="content"><a class="title" href="/posts/93378cf6.html" title="晶体管的频率响应">晶体管的频率响应</a><time datetime="2023-04-25T07:33:16.000Z" title="发表于 2023-04-25 15:33:16">2023-04-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/7fbac63a.html" title="电流镜"><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2831EC992A895563D144623CB3C8E018.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="电流镜"/></a><div class="content"><a class="title" href="/posts/7fbac63a.html" title="电流镜">电流镜</a><time datetime="2023-04-24T09:08:29.000Z" title="发表于 2023-04-24 17:08:29">2023-04-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By lucky-帅比</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://talk.ztblog.cc/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://talk.ztblog.cc/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="8152976493" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://ztblog-image.oss-cn-chengdu.aliyuncs.com/F0891D5BA53CDD731F5B36C1F9A45830.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/博客搭建/&quot;);" href="javascript:void(0);">博客搭建</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://ztblog-image.oss-cn-chengdu.aliyuncs.com/BC483908F430AE21DABEF506541CE784.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/日志/&quot;);" href="javascript:void(0);">日志</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://ztblog-image.oss-cn-chengdu.aliyuncs.com/DC4EF5979BD426C68A80CB3D8FE2A060.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/markdown操作/&quot;);" href="javascript:void(0);">markdown操作</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://ztblog-image.oss-cn-chengdu.aliyuncs.com/BBCEBA698EF4DE70AAA64191F266B7AE.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/晶体管基础/&quot;);" href="javascript:void(0);">晶体管基础</a><span class="categoryBar-list-count">8</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://ztblog-image.oss-cn-chengdu.aliyuncs.com/DD43F946E85EF0326A2C0D8B1262155B.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/晶体管提高/&quot;);" href="javascript:void(0);">晶体管提高</a><span class="categoryBar-list-count">5</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(https://ztblog-image.oss-cn-chengdu.aliyuncs.com/293565BBABD706D6FEAC927EC420D84D.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/负反馈和放大电路基础/&quot;);" href="javascript:void(0);">负反馈和放大电路基础</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/电路基础/&quot;);" href="javascript:void(0);">电路基础</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'd2ecfc444d8249fb9b1fb8a21b63a77d';
+  var gaud_map_key = '19d06961afb9aaf583c2e9bf8ef4c2d2';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '104.06,30.67';
+  var clock_default_rectangle_enable = 'true';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" data-title="博客框架为Hexo_v5.4.0" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" data-title="主题版本Butterfly_v4.2.2" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://www.jsdelivr.com/" style="margin-inline:5px" data-title="本站使用JsDelivr为静态资源提供CDN加速" title=""><img src="https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&amp;logo=jsDelivr" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" data-title="本站项目由Github托管" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" data-title="本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime/runtime.min.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/52e04fc1.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/6B7715465E6D116E87CF3F95A86EAC8E.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-12</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/52e04fc1.html&quot;);" href="javascript:void(0);" alt="">hexo文档写作</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/52e04fc1.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/2b4a096.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/5B6584B785CF10408E33431479AE8129.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-16</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/2b4a096.html&quot;);" href="javascript:void(0);" alt="">输入电阻和输出电阻算法</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/2b4a096.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/d94ecac3.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/AA00A7FBE5EDF22565563F6B1C46F034.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-13</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/d94ecac3.html&quot;);" href="javascript:void(0);" alt="">二极管基础</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/d94ecac3.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/d94ecac4.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/B49B5B82A35184B174F903E848A041E5.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-14</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/d94ecac4.html&quot;);" href="javascript:void(0);" alt="">三极管基础</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/d94ecac4.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/359ff663.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/5B6584B785CF10408E33431479AE8129.jpg" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-04-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/359ff663.html&quot;);" href="javascript:void(0);" alt="">博客搭建流程（hexo-netlify-github）</a><div class="blog-slider__text">再怎么看我也不知道怎么描述它的啦！</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/359ff663.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><script async src="/js/ali_font.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
