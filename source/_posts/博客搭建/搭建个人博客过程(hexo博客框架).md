@@ -37,7 +37,7 @@ category: 博客搭建
 >```
 >
 >npm config get registry # 查看原来的源
->npm config set registry https://registry.npm.taobao.org # 修改为淘宝源
+>npm config set registry https://registry.npmmirror.com # 修改为淘宝源，可能失效
 >npm config get registry # 查看现在的源
 >```
 
@@ -104,6 +104,11 @@ category: 博客搭建
 >hexo new post "test" # 会在 source/_posts/ 目录下生成文件 ‘test.md’，打开编辑
 >hexo generate        # 生成静态HTML文件到 /public 文件夹中
 >hexo server          # 本地运行server服务预览，打开 http://localhost:4000 即可预览你的博客
+>```
+>
+>出现问题：command not found
+>```
+>npx hexo +命令
 >```
 
 >更详细的`hexo`命令可以查看文档：https://hexo.io/zh-cn/docs/commands
