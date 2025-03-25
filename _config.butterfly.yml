@@ -119,7 +119,7 @@ favicon: /favicon_package_v0.16/favicon-32x32.png
 
 # Avatar (頭像)
 avatar:
-  img: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/QQ%E5%9B%BE%E7%89%8720230410142621.jpg
+  img: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/2023/QQ%E5%9B%BE%E7%89%8720230410142621.jpg
   effect: false
 
 # Disable all banner image
@@ -163,14 +163,14 @@ cover:
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
-    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/78C2BEFC01A90F91DDB68E0EECDF5E2B.jpg
-    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/81F4C0A552D8E28FE0D42AB9DB30AFFB.jpg
-    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/AA00A7FBE5EDF22565563F6B1C46F034.jpg
-    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/6C60F24332AE3081313F5352F99FAF3A.jpg
-    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/B49B5B82A35184B174F903E848A041E5.jpg
-    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/6B7715465E6D116E87CF3F95A86EAC8E.jpg
-    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/5B6584B785CF10408E33431479AE8129.jpg
-    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2831EC992A895563D144623CB3C8E018.jpg
+    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/78C2BEFC01A90F91DDB68E0EECDF5E2B.jpg
+    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/81F4C0A552D8E28FE0D42AB9DB30AFFB.jpg
+    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/AA00A7FBE5EDF22565563F6B1C46F034.jpg
+    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/6C60F24332AE3081313F5352F99FAF3A.jpg
+    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/B49B5B82A35184B174F903E848A041E5.jpg
+    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/6B7715465E6D116E87CF3F95A86EAC8E.jpg
+    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/5B6584B785CF10408E33431479AE8129.jpg
+    - https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/2831EC992A895563D144623CB3C8E018.jpg
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
@@ -562,10 +562,10 @@ tag_ui: # 留空或 index
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg) 
-background: url(https://ztblog-image.oss-cn-chengdu.aliyuncs.com/616945.png)
+background: url(https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/616945.png)
 # background: url(/image/2.png)
 # https://s1.vika.cn/space/2023/04/09/e6d00197e4f14bcb80a127e16c6b6b03
-# https://ztblog-image.oss-cn-chengdu.aliyuncs.com/%E6%B5%B7%E8%B4%BC%E7%8E%8B%E8%83%8C%E6%99%AF1.png
+# https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/%E6%B5%B7%E8%B4%BC%E7%8E%8B%E8%83%8C%E6%99%AF1.png
 
 # Footer Background
 footer_bg: false
@@ -1127,17 +1127,17 @@ categoryBar:
   row: 1 #显示行数，默认两行，超过行数切换为滚动显示
   message:
     - descr: 
-      cover: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/F0891D5BA53CDD731F5B36C1F9A45830.jpg
+      cover: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/F0891D5BA53CDD731F5B36C1F9A45830.jpg
     - descr: 
-      cover: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/BC483908F430AE21DABEF506541CE784.jpg
+      cover: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/BC483908F430AE21DABEF506541CE784.jpg
     - descr: 
-      cover: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/DC4EF5979BD426C68A80CB3D8FE2A060.jpg
+      cover: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/DC4EF5979BD426C68A80CB3D8FE2A060.jpg
     - descr: 
-      cover: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/BBCEBA698EF4DE70AAA64191F266B7AE.jpg
+      cover: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/BBCEBA698EF4DE70AAA64191F266B7AE.jpg
     - descr: 
-      cover: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/DD43F946E85EF0326A2C0D8B1262155B.jpg
+      cover: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/DD43F946E85EF0326A2C0D8B1262155B.jpg
     - descr: 
-      cover: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/293565BBABD706D6FEAC927EC420D84D.jpg
+      cover: https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/293565BBABD706D6FEAC927EC420D84D.jpg
   custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css
   
 # hexo-butterfly-swiper
