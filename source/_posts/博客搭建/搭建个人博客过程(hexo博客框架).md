@@ -110,6 +110,13 @@ category: 博客搭建
 >```
 >npx hexo +命令
 >```
+>使用VScode编写出现的问题
+>```
+>终端无法加载文件
+>管理员运行powershell
+>set-ExecutionPolicy RemoteSigned
+>```
+>
 
 >更详细的`hexo`命令可以查看文档：https://hexo.io/zh-cn/docs/commands
 
@@ -207,7 +214,7 @@ category: 博客搭建
 
 >git使用：
 >
->![git流程](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/git%E6%B5%81%E7%A8%8B.png)
+>![git流程](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/git%E6%B5%81%E7%A8%8B.png)
 >
 >```
 >git init  # 创建本地仓库
@@ -228,7 +235,26 @@ category: 博客搭建
 >
 >上传权限问题：生成ssh秘钥，并放入github中
 >
->![image-20230407171835074](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/github%E6%B5%81%E7%A8%8B.png)
+>![image-20230407171835074](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/github%E6%B5%81%E7%A8%8B.png)
+
+>配置SSH
+>```
+>ssh-keygen -t rsa -C "邮件地址" #生成
+>复制id_rsa.pub内容到Github的ssh  #c:\users\.ssh
+># 第一次配置
+>git config --global user.email "你的邮箱"
+>git config --global user.name "你的名字"
+>```
+
+>push出错：failed to push some refs
+>```
+>#三种挨着试
+>git pull #下拉
+>git pull --rebase origin master
+>git pull origin dev
+>```
+>
+
 
 >**注意事项：**
 >
@@ -245,7 +271,7 @@ category: 博客搭建
 >
 >2. 新建站点：
 >
->   ![create-site](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/SJvGYlIzZVm7iP5.png)
+>   ![create-site](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/SJvGYlIzZVm7iP5.png)
 >
 >3. 连接
 >
@@ -253,11 +279,11 @@ category: 博客搭建
 >  github
 >  ```
 >
->- ![connect-github](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/oSa6BOtIQ8WkZX1.png)
+>- ![connect-github](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/oSa6BOtIQ8WkZX1.png)
 >
 >4. 选择刚刚上传的博客项目：
 >
->  - ![select-project](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/e2sGfOYSAFPylVB.png)
+>  - ![select-project](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/e2sGfOYSAFPylVB.png)
 >
 >5. 一切默认，除了构建命令改成我们之前设置的
 >
@@ -265,13 +291,13 @@ category: 博客搭建
 >  npm run netlify
 >  ```
 >
->  - ![site-config](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/p3P2NJaQzuIZnYs.png)
+>  - ![site-config](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/p3P2NJaQzuIZnYs.png)
 >
 >    > 这里BaseDirectory为空表示项目目录是仓库目录的根目录。
 >
 >6. 构建完成后我们就能够看到一个URL，打开网址就是我们的个人博客了
 >
->  - ![url-generate](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/B2qmolnIgDH5uNt.png)
+>  - ![url-generate](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/B2qmolnIgDH5uNt.png)
 >
 >可以根据提示进行进一步的设置，比如说设置一下二级域名（即`netlify.app`之前的域名）。
 >
@@ -284,17 +310,17 @@ category: 博客搭建
 ### 配置域名：
 
 >1. 在netlify设置用户域名。
->   - ![set-custom-domain](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/MDjxbIcWBEoLURA.png)
+>   - ![set-custom-domain](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/MDjxbIcWBEoLURA.png)
 >2. 进行相关的配置，由于我们的域名本身已经配置了解析，这里会显示出来，不用再额外添加记录，只需要一路默认即可。
->   - ![add-record](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/cqwL9xF8Eov6yVa.png)
->   - ![activate-dns](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/RTLcjynQYXbW9vI.png)
+>   - ![add-record](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/cqwL9xF8Eov6yVa.png)
+>   - ![activate-dns](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/RTLcjynQYXbW9vI.png)
 >3. 设置一下netlify本身的对于国外CDN的支持。
->   - ![netlify-cdn](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/8v3ROjQc2WY9q7T.png)
+>   - ![netlify-cdn](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/8v3ROjQc2WY9q7T.png)
 >
 >之后，我们就可以通过自己配置的域名访问自己的个人博客，比如说我的博客地址是 [https://blog.cuijiacai.com](https://blog.cuijiacai.com/) 。
 >
 >> 这里`https`访问需要在`netlify`中配置，否则应该只能`http`访问。
->> ![https-config](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/f3q8hPbG5vsImeY.png)
+>> ![https-config](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/f3q8hPbG5vsImeY.png)
 >> 需要注意一下的是，此刻的https配置过程中的dns验证已经可以通过，但是证书检查会失败，等到后面clouldflare加速配置完成之后，这个问题 就可以解决了。所以暂时应该只能http访问。
 >
 >但是，此刻我们的博客访问依然需要科学上网，因为我们还没有国内的CDN的支持，下面，我们来解决这个问题。
@@ -309,31 +335,31 @@ category: 博客搭建
 >
 >1. 注册[Clouldflare](https://www.cloudflare.com/zh-cn/)并登陆
 >2. 添加站点
->   - ![add-site](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/rqNObP5dzE6GY83.png)
->   - ![config-site](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/Dk3Y4BrltQeCOHI.png)
+>   - ![add-site](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/rqNObP5dzE6GY83.png)
+>   - ![config-site](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/Dk3Y4BrltQeCOHI.png)
 >3. 选择免费套餐
->   - ![choose-project](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/SrhEAvmGZeqn8Co.png)
+>   - ![choose-project](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/SrhEAvmGZeqn8Co.png)
 >4. 添加 DNS 记录
 >   - 一般情况下 Cloudflare 会检测出来几条 DNS 记录，类型大多数是A，或者AAAA，由于我们是转发，所以应该是 CNAME 类型才对。有必要的话可能得手动配置一下。
->   - ![update-record](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/fSsAGV5JCeZuF1w.png)
+>   - ![update-record](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/fSsAGV5JCeZuF1w.png)
 >5. 更改名称服务器
 >   - 这个步骤Cloudflare会提供一个在线的教程，主要步骤是在你的域名服务商那里修改 dns 解析服务器为 cloudflare 提供的地址，修改完成后点击完成。
->   - ![modify-server](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/vd2WxXGbJHmgAey.png)
+>   - ![modify-server](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/vd2WxXGbJHmgAey.png)
 >   - 以阿里云为例，设置的步骤如下:
 >     1. 进入域名的配置界面
->        - ![dns-manage](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/ZfLiNUejRsCyhG3.png)
+>        - ![dns-manage](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/ZfLiNUejRsCyhG3.png)
 >     2. 将域名服务器从阿里云的默认服务器改成clouldflare的服务器
->        - ![change-server](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/juxWl7i9QaeLTGK.png)
+>        - ![change-server](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/juxWl7i9QaeLTGK.png)
 >   - 配置完成后，clouldflare会有邮件通知(一般不会等太久)
->     ![mail-notice](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/JbBvp18Trne37kC.png)
+>     ![mail-notice](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/JbBvp18Trne37kC.png)
 
 ## 配置https
 
 >在clouldflare配置完成之后，我们可以回到netlify去配置一下https访问。
 >
 >1. 先确认一下dns解析:
->   - ![verify-dns](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/r6iHKWLktnRap1j.png)
+>   - ![verify-dns](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/r6iHKWLktnRap1j.png)
 >2. 然后自动安装证书:
->   - ![certify](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/KvDupBFh8b9CScN.png)
+>   - ![certify](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/KvDupBFh8b9CScN.png)
 >3. 最后看到如下的界面，就说明https配置完成了:
->   - ![https-config](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/f3q8hPbG5vsImeY.png)
+>   - ![https-config](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/f3q8hPbG5vsImeY.png)

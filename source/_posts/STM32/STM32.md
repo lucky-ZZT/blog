@@ -33,23 +33,23 @@ highlight_shrink:
 
 ### 命名规则
 
-<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230614170928254.png" alt="image-20230614170928254" style="zoom:67%;" />
+<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230614170928254.png" alt="image-20230614170928254" style="zoom:67%;" />
 
 ### 系统结构
 
-<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230614171345362.png" alt="image-20230614171345362" style="zoom:67%;" />
+<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230614171345362.png" alt="image-20230614171345362" style="zoom:67%;" />
 
 ### 引脚定义
 
-<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230614171643557.png" alt="image-20230614171643557" style="zoom:67%;" />
+<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230614171643557.png" alt="image-20230614171643557" style="zoom:67%;" />
 
 ### 启动设置
 
-![image-20230614172019165](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230614172019165.png)
+![image-20230614172019165](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230614172019165.png)
 
 ### 最小结构
 
-![image-20230614173442806](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230614173442806.png)
+![image-20230614173442806](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230614173442806.png)
 
 补充：使用32.768k的原因
 $$
@@ -88,7 +88,7 @@ $$
 
 - 添加头文件路径
 
-![image-20230614214713055](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230614214713055.png)
+![image-20230614214713055](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230614214713055.png)
 
 
 
@@ -102,7 +102,7 @@ $$
 
 - 配置标准外设库
 
-  ![image-20230615103844008](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230615103844008.png)
+  ![image-20230615103844008](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230615103844008.png)
 
 
 
@@ -122,9 +122,9 @@ $$
 
 基本结构
 
-![image-20230615140134086](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230615140134086.png)
+![image-20230615140134086](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230615140134086.png)
 
-![image-20230619095209835](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230619095209835.png)
+![image-20230619095209835](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230619095209835.png)
 
 模式
 
@@ -307,7 +307,7 @@ int main(void)		//返回得是void类型，不然会报警告
 
 ### keil调试模式
 
-![image-20230619161044408](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230619161044408.png)
+![image-20230619161044408](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230619161044408.png)
 
 
 
@@ -324,7 +324,7 @@ int main(void)		//返回得是void类型，不然会报警告
 
 - 结构
 
-<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230619164515336.png" alt="image-20230619164515336" style="zoom:67%;" />
+<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230619164515336.png" alt="image-20230619164515336" style="zoom:67%;" />
 
 
 
@@ -356,11 +356,11 @@ EXTI可以监测指定GPIO口的电平信号，当其指定的GPIO口产生电�
 
 - 结构
 
-  ![image-20230619164858028](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230619164858028.png)
+  ![image-20230619164858028](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230619164858028.png)
 
 - 框架
 
-  ![image-20230619164933871](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230619164933871.png)
+  ![image-20230619164933871](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230619164933871.png)
 
 ### 代码示例
 
@@ -463,19 +463,19 @@ STM32F103C8T6定时器资源：TIM1、TIM2、TIM3、TIM4
 
 ### 框架
 
-![image-20230619200400541](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230619200400541.png)
+![image-20230619200400541](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230619200400541.png)
 
-![image-20230625103451318](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230625103451318.png)
+![image-20230625103451318](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230625103451318.png)
 
 
 
-![image-20230625103505891](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230625103505891.png)
+![image-20230625103505891](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230625103505891.png)
 
-![image-20230619220433231](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230619220433231.png)
+![image-20230619220433231](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230619220433231.png)
 
 ### RCC时钟树
 
-![image-20230625110214425](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230625110214425.png)
+![image-20230625110214425](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230625110214425.png)
 
 ### 锁相环(PLL)
 
@@ -485,7 +485,7 @@ STM32F103C8T6定时器资源：TIM1、TIM2、TIM3、TIM4
 
 #### 组成
 
-![img](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/964cda49361943089ca8b1f370449709.png)
+![img](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/964cda49361943089ca8b1f370449709.png)
 
 - PD鉴相器
 
@@ -497,7 +497,7 @@ STM32F103C8T6定时器资源：TIM1、TIM2、TIM3、TIM4
 
     简单的电路，可以是异或逻辑
 
-    ![image-20230625122513224](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230625122513224.png)
+    ![image-20230625122513224](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230625122513224.png)
 
     
 
@@ -637,13 +637,13 @@ STM32F103C8T6定时器资源：TIM1、TIM2、TIM3、TIM4
 | PWM模式1         | 向上计数：CNT<CCR时，REF置有效电平，CNT≥CCR时，REF置无效电平。<br />向下计数：CNT>CCR时，REF置无效电平，CNT≤CCR时，REF置有效电平。 |
 | PWM模式2         | 向上计数：CNT<CCR时，REF置无效电平，CNT≥CCR时，REF置有效电平。<br />向下计数：CNT>CCR时，REF置有效电平，CNT≤CCR时，REF置无效电平 |
 
-![image-20230619224537861](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230619224537861.png)
+![image-20230619224537861](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230619224537861.png)
 
 #### PWM
 
-<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230619224837750.png" alt="image-20230619224837750" style="zoom:67%;" />
+<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230619224837750.png" alt="image-20230619224837750" style="zoom:67%;" />
 
-<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230619224853388.png" alt="image-20230619224853388" style="zoom:67%;" />
+<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230619224853388.png" alt="image-20230619224853388" style="zoom:67%;" />
 
 
 
@@ -743,27 +743,27 @@ int main(void)
 
 #### 频率测量
 
-![image-20230625214852205](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230625214852205.png)
+![image-20230625214852205](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230625214852205.png)
 
 - 测频法（适用于高频）：在闸门时间T内，对上升沿计次，得到N，则频率f_x=N / T
 - 测周法（适用于低频）：两个上升沿内，以标准频率fc计次，得到N ，则频率f_x=f_c / N；（这里的标准频率是计次N的，从而算出一个周期的时间是N/f_c;频率是周期的导数）
 - 中界频率：测频法与测周法误差相等的频率点f_m=√f_c / T
 
-#### 输入通道捕获![image-20230626232323986](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230626232323986.png)
+#### 输入通道捕获![image-20230626232323986](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230626232323986.png)
 
 
 
 #### 主从触发模式
 
-![image-20230626231501372](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230626231501372.png)
+![image-20230626231501372](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230626231501372.png)
 
 #### 输入捕获基本结构
 
-![image-20230626232524139](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230626232524139.png)
+![image-20230626232524139](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230626232524139.png)
 
 #### PWMI基本结构(占空比)
 
-![image-20230626232454957](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230626232454957.png)
+![image-20230626232454957](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230626232454957.png)
 
 #### 代码测试
 
@@ -860,7 +860,7 @@ int main(void)
 
 ### 逐次逼近型ADC
 
-<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629220455997.png" alt="image-20230629220455997" style="zoom:67%;" />
+<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629220455997.png" alt="image-20230629220455997" style="zoom:67%;" />
 
 ​	逐次逼近型adc由比较器、D/A转换器、缓冲寄存器和若干控制逻辑电路构成。原理是从高位到低位逐位比较，首先将缓冲寄存器各位清零；转换开始后，先将寄存器最高位置1，把值送入D/A转换器，经D/A转换后的模拟量送入比较器，称为 Vo，与比较器的待转换的模拟量Vi比较，若Vo<Vi，该位被保留，否则被清0。然后，再置寄存器次高位为1，将寄存器中新的数字量送D/A转换器，输出的 Vo再与Vi比较，若Vo<Vi，该位被保留，否则被清0。循环此过程，直到寄存器最低位，得到数字量的输出
 
@@ -868,11 +868,11 @@ int main(void)
 
 ### ADC框图
 
-![image-20230629220718352](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629220718352.png)
+![image-20230629220718352](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629220718352.png)
 
 ### ADC基本结构
 
-![image-20230629220740666](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629220740666.png)
+![image-20230629220740666](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629220740666.png)
 
 
 
@@ -905,31 +905,31 @@ int main(void)
 
 - 连续转换，非扫描模式
 
-  ![image-20230629220916730](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629220916730.png)
+  ![image-20230629220916730](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629220916730.png)
 
 - 单次转换，非扫描模式
 
-  ![image-20230629220943268](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629220943268.png)
+  ![image-20230629220943268](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629220943268.png)
 
 - 连续转换，扫描模式
 
-  ![image-20230629221905469](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629221905469.png)
+  ![image-20230629221905469](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629221905469.png)
 
 - 单次转换，扫描模式
 
-  ![image-20230629221801648](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629221801648.png)
+  ![image-20230629221801648](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629221801648.png)
 
   
 
 ### 触发控制
 
-![image-20230629221941097](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629221941097.png)
+![image-20230629221941097](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629221941097.png)
 
 
 
 ### 数据对齐
 
-![image-20230629222029798](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629222029798.png)
+![image-20230629222029798](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629222029798.png)
 
 
 
@@ -1076,17 +1076,17 @@ uint16_t AD_GetValue(uint8_t ADC_Channel)	//多通道实现方式1，直接改�
 
 ### DMA框图
 
-![image-20230629224843401](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629224843401.png)
+![image-20230629224843401](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629224843401.png)
 
 
 
 ### 基本结构
 
-![image-20230629224904008](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629224904008.png)
+![image-20230629224904008](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629224904008.png)
 
 
 
-![image-20230629224924636](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629224924636.png)
+![image-20230629224924636](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629224924636.png)
 
 
 
@@ -1094,7 +1094,7 @@ uint16_t AD_GetValue(uint8_t ADC_Channel)	//多通道实现方式1，直接改�
 
 ### 数据运转
 
-<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629225009301.png" alt="image-20230629225009301" style="zoom:67%;" />
+<img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629225009301.png" alt="image-20230629225009301" style="zoom:67%;" />
 
 
 
@@ -1142,7 +1142,7 @@ void MyDMA_Transfer(void)
 
 ### ADC扫描模式
 
-![image-20230629225423513](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230629225423513.png)
+![image-20230629225423513](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230629225423513.png)
 
 
 

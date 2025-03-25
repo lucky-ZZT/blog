@@ -1269,13 +1269,13 @@ gallery 相册
 
 {% gallery %}
 ![](https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/ryLVePaqkYm4TEK.jpg)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/gEy5Zc1Ai6VuO4N.jpg)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/d6QHbytlSYO4FBG.jpg)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/6nepIJ1xTgufatZ.jpg)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/E7Jvr4eIPwUNmzq.jpg)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/mh19anwBSWIkGlH.jpg)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2tu9JC8ewpBFagv.jpg)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/2023/ryLVePaqkYm4TEK.jpg)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/gEy5Zc1Ai6VuO4N.jpg)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/d6QHbytlSYO4FBG.jpg)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/6nepIJ1xTgufatZ.jpg)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/E7Jvr4eIPwUNmzq.jpg)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/mh19anwBSWIkGlH.jpg)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/2tu9JC8ewpBFagv.jpg)
 {% endgallery %}
 
 <!-- endtab -->
@@ -1624,16 +1624,16 @@ Butterfly主题的各个衍生魔改{% referto '[6]','Butterfly 安装文档:标
 <!-- tab 样式预览 -->
 
 {% carousel 'SF','strike freedom' %}
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/20200907110444226.png)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/20200907110508327.png)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/20200907110525753.png)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/20200907110600751.png)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/20200907110621554.png)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/20200907110637459.png)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/20200907110654150.png)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/20200907110707916.png)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/20200907110719787.png)
-![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/20200907110731118.png)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/20200907110444226.png)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/20200907110508327.png)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/20200907110525753.png)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/20200907110600751.png)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/20200907110621554.png)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/20200907110637459.png)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/20200907110654150.png)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/20200907110707916.png)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/20200907110719787.png)
+![](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/20200907110731118.png)
 {% endcarousel %}
 
 <!-- endtab -->

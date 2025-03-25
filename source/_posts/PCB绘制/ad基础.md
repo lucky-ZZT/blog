@@ -24,11 +24,11 @@ highlight_shrink:
 
 (2)创建
 
-- 创建工程![image-20230530120701135](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230530120701135.png)
+- 创建工程![image-20230530120701135](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230530120701135.png)
 
 - 创建原理图库、原理图、PCB库、PCB
 
-  ![image-20230530121615880](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230530121615880.png)
+  ![image-20230530121615880](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230530121615880.png)
 
 
 
@@ -42,7 +42,7 @@ highlight_shrink:
 
   基本操作
 
-  ![Snipaste_2023-05-30_15-12-52](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-05-30_15-12-52.png)
+  ![Snipaste_2023-05-30_15-12-52](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/Snipaste_2023-05-30_15-12-52.png)
 
   
 
@@ -50,7 +50,7 @@ highlight_shrink:
 
   - 其中，Designator（常见写法R?、U?、C？、J?等）
 
-  ![Snipaste_2023-05-30_15-17-21](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/Snipaste_2023-05-30_15-17-21.png)
+  ![Snipaste_2023-05-30_15-17-21](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/Snipaste_2023-05-30_15-17-21.png)
 
   
 
@@ -84,7 +84,7 @@ highlight_shrink:
 
   快捷键：TAA
 
-  ![image-20230607125502356](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230607125502356.png)
+  ![image-20230607125502356](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230607125502356.png)
 
 - 封装
 
@@ -100,11 +100,11 @@ highlight_shrink:
 
   
   
-  ![image-20230607132010763](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230607132010763.png)
+  ![image-20230607132010763](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230607132010763.png)
   
   - 编译
   
-    <img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230703125236466.png" alt="image-20230703125236466" style="zoom:67%;" />
+    <img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230703125236466.png" alt="image-20230703125236466" style="zoom:67%;" />
   
   
 
@@ -114,7 +114,7 @@ highlight_shrink:
 
 - 组成
 
-  ![image-20230607133219290](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230607133219290.png)
+  ![image-20230607133219290](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230607133219290.png)
 
   阻焊：防止绿油覆盖
 
@@ -146,9 +146,9 @@ highlight_shrink:
 
   安装扩展
 
-  ![image-20230607140823814](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230607140823814.png)
+  ![image-20230607140823814](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230607140823814.png)
 
-  ![image-20230607140959966](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230607140959966.png)
+  ![image-20230607140959966](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230607140959966.png)
 
 ## PCB绘制
 
@@ -160,7 +160,7 @@ highlight_shrink:
 
   进入该界面
 
-  ![image-20230607201015179](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/image-20230607201015179.png)
+  ![image-20230607201015179](https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/image-20230607201015179.png)
 
   关闭所以，再复位错误标志
 
