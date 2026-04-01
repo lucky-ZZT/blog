@@ -6,7 +6,7 @@
   <link href="http://blog.ztblog.cc/atom.xml" rel="self"/>
   
   <link href="http://blog.ztblog.cc/"/>
-  <updated>2023-04-13T07:50:43.232Z</updated>
+  <updated>2026-04-01T07:10:03.888Z</updated>
   <id>http://blog.ztblog.cc/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>仪表放大器</title>
+    <link href="http://blog.ztblog.cc/posts/8dbcfd96.html"/>
+    <id>http://blog.ztblog.cc/posts/8dbcfd96.html</id>
+    <published>2026-04-01T07:07:16.000Z</published>
+    <updated>2026-04-01T07:10:03.888Z</updated>
+    
+    
+    
+    
+    <category term="负反馈和放大电路基础" scheme="http://blog.ztblog.cc/categories/%E8%B4%9F%E5%8F%8D%E9%A6%88%E5%92%8C%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -450,29 +465,6 @@
     
     
     <category term="负反馈和放大电路基础" scheme="http://blog.ztblog.cc/categories/%E8%B4%9F%E5%8F%8D%E9%A6%88%E5%92%8C%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF%E5%9F%BA%E7%A1%80/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>运放电路的频率特性</title>
-    <link href="http://blog.ztblog.cc/posts/47c06f43.html"/>
-    <id>http://blog.ztblog.cc/posts/47c06f43.html</id>
-    <published>2023-05-09T02:30:52.000Z</published>
-    <updated>2025-03-25T07:00:11.969Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>频率特性：是指一个放大电路对不同频率的输入信号，所表现出的不同性能。</p><h2 id="开环增益"><a href="#开环增益" class="headerlink" title="开环增益"></a>开环增益</h2><p>运算放大器的开环增益，是随频率变化而变化的，一般情况下都是随着频率的升高而降低，如图 1.1 所示。</p><p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/%E5%AE%9E%E9%99%85%E8%BF%90%E6%94%BE%E7%9A%84%E5%BC%80%E7%8E%AF%E5%A2%9E%E7%9B%8A%E6%9B%B2%E7%BA%BF.png" alt="实际运放的开环增益曲线"></p><center>图1.1 实际运放的开环增益曲线</center><div class="tip info"><p>上图所示的红色区域，可以看到曲线开始变得不直了，这种情况这通常发生在开环增益低于 20dB 以下的区域</p></div><script type="math/tex; mode=display">\begin{array}\\如果忽视这一段的异常，运放的开环特性可以用如下简化式表达：\\\dot{A}_{uo}(f) = A_{uom} \times \cfrac{1}{1+j\cfrac{f}{f_H}} \\上述公式可以参考晶体管提高部分的，晶体管频率的低通部分；\\幅值和相位如下所示：\\{A}_{uo}(f) = A_{uom} \times \cfrac{1}{\sqrt{1+(\cfrac{f}{f_H})^2}} \\φ_{uo}(f) = -arctan(\cfrac{f}{f_H})\\对开环增益的进一步简化\\可知一个反馈系数为 F，衰减系数为 M 的闭环放大电路，其闭环增益与运放开环增益之间的关系为：\\\dot𝐴̇_{uf}(𝑓) =\cfrac{𝑢̇_o}{𝑢_i}= \cfrac{𝑀 × \dot𝐴̇_{uo}(𝑓)}{1 + 𝐹 × \dot𝐴̇_{uo}(𝑓)}\end{array}</script><p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/2023-05-09%20%E5%BC%80%E7%8E%AF%E5%A2%9E%E7%9B%8A%E7%9A%84%E8%BF%9B%E4%B8%80%E6%AD%A5%E7%AE%80%E5%8C%96.png" alt="2023-05-09 开环增益的进一步简化"></p><p>​    上图绘制的两个运放的开环增益曲线，分别为图中橙色、蓝色线，运放 1 的 <em>A</em>uom1=10^7 ，fH1=1Hz，运放 2 的 <em>A</em>_uom2=10^6 ,<em>f</em>H2=10Hz。可以看出，两者的主要差别发生在低频段，随着频率的上升，到 100Hz 处，它们的开环增益已经完全重合，至少肉眼已经无法分辨它们的区别。</p><p>​    用这样两个运放分别制作 10 倍同相比例器，产生的闭环增益的模用 <em>A</em>uf1(<em>f</em>)和 <em>A</em>uf2(<em>f</em>)表示，它们是随频率变化的，如图黄色曲线所示——两根线是重合的。它们在低频段保持闭环增益等于 10，同样的，这个值被称为闭环中频增益，用 A_ufm1=A_ufm2=10 表示。</p><p>​    从而可以得出结论，，在低频处开环增益的不同，对闭环增益曲线的带宽 f_Hf 几乎没有影响。我们希望用一个更为简单的公式描述开环增益曲线：</p><script type="math/tex; mode=display">\dot{A}_{uo}(f) = A_{uom} \times \cfrac{1}{0+j\cfrac{f}{f_H}}=-j \times A_{uom} \times \cfrac{f_H}{f}</script><p>​    上述公式，在上图中表现为那条绿色的直线，和之前的曲线只是低频段不同，</p><p>​    生产厂家在运放的数据手册中，一般不强调 Auom 和 <em>f</em>H，而重点强调 GBW（增益带宽积)）或者 UGBW（单位增益带宽积）。因此,我们需要利用 UGBW 或者 GBW 对其进行变形。（上述公式为1a）</p><p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/2023-05-09%20%E5%BC%80%E7%8E%AF1.png" alt="2023-05-09 开环1"></p><h2 id="闭环增益带宽"><a href="#闭环增益带宽" class="headerlink" title="闭环增益带宽"></a>闭环增益带宽</h2><p>​    运放是一个直接耦合高增益放大器，它对低频或者直流是具有高增益的，不具备下限截止频率。</p><ul><li><p>闭环增益带宽: 为研究闭环增益变化与开环增益变化之间的规律。</p><p>它是针对一个放大电路定义的，一般指-3dB 带宽，是指随频率升高，闭环增益下降到Aufm的 0.707 倍时对应的频率，用 <em>f</em>Hf表示，也可用 <em>f</em>Hf-3dB 表示。</p></li><li><p>闭环增益 <em>y</em>dB 平坦带宽：</p><p>随着频率的上升，闭环增益与闭环中频增益 <em>A</em>ufm 的 dB 差值超过 <em>y</em>dB 所对应的频率值，称为 <em>y</em>dB 平坦带宽，用 <em>f</em>Hf±<em>y</em>dB表示；</p></li></ul><h2 id="y问题"><a href="#y问题" class="headerlink" title="y问题"></a>y问题</h2><script type="math/tex; mode=display">f_{Hf-ydB} = F \times GBW \times \cfrac{\sqrt{1-k^2}}{k},k=10^{-\cfrac{y}{20}}</script><p>​    这个表达式就是 <em>y</em> 问题的正问题答案：一个运放的增益带宽积 GBW 已知，用它组成一个放大电路，其反馈系数为 <em>F</em>，衰减系数为 <em>M</em>，则该放大电路的-<em>y</em>dB 上限平坦带宽 <em>f</em>Hf-<em>y</em>dB,计算方法如上式所示：</p><p>​    推导过程：</p><p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/%E6%8E%A8%E5%AF%BC%E8%BF%87%E7%A8%8B1.png" alt="推导过程1"></p><p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/2023-05-09%20151608%E6%8E%A8%E5%AF%BC%E8%BF%87%E7%A8%8B2.png" alt="2023-05-09 151608推导过程2"></p><p>​    也可以得到 <em>y</em> 问题的逆问题及其答案：一个放大电路，其反馈系数为 <em>F</em>，衰减系数为 <em>M</em>，要求其-<em>y</em>dB 上限平坦带宽为 <em>f</em>Hf-<em>y</em>dB，求运放的 GBW。</p><p><img src="https://ztblog-image.oss-cn-chengdu.aliyuncs.com/2023/2023-05-09%20151804%E6%8E%A8%E5%AF%BC%E8%BF%87%E7%A8%8B3.png" alt="2023-05-09 151804推导过程3"></p><p>​    注意，这两个公式在求解过程中利用了运放开环增益的简化模型，与实际运放的主要差异表现高频段，就是图 1.1 中红色区域，实际运放在这里已经不是直线，且相移已经不再是-90°。如果关键频率结论发生在这个区域，那么计算就会出现较大差异。因此，闭环增益越大，这个公式越准确。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h2&gt;&lt;p&gt;频率特性：是指一个放大电路对不同频率的输入信号，所表现出的不同性能。&lt;/p&gt;
-&lt;h2 id=&quot;开环增益&quot;&gt;&lt;a href=&quot;#开环增益&quot; c</summary>
-      
-    
-    
-    
-    <category term="运放的频率特性" scheme="http://blog.ztblog.cc/categories/%E8%BF%90%E6%94%BE%E7%9A%84%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7/"/>
     
     
   </entry>
